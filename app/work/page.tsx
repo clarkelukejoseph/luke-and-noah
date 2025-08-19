@@ -1,38 +1,46 @@
 "use client";
 
+import { useState } from "react";
 import Header from "../components/Header";
-import WorkGrid, { ItemConfig } from "../components/WorkGrid";
-
-const CardCell = ({ gridIndex, position, isMoving }: ItemConfig) => (
-  <div
-    className={`absolute inset-1 flex flex-col items-center justify-center bg-white border border-gray-200 rounded-xl p-2 text-xs text-gray-800 transition-shadow ${
-      isMoving ? "shadow-xl" : "shadow-md"
-    }`}
-  >
-    <div className="text-base font-bold mb-1">#{gridIndex}</div>
-    <div className="text-[10px] text-gray-500">
-      {position.x}, {position.y}
-    </div>
-  </div>
-);
+import WorkCard from "../components/WorkCard";
+import ProjectModal from "../components/ProjectModal";
+import { workProjects, WorkProject } from "../data/projects";
 
 export default function WorkPage() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState<WorkProject | null>(null);
+
+  const handleProjectClick = (project: WorkProject) => {
+    setSelectedProject(project);
+    setIsModalOpen(true);
+  };
+
   return (
     <main>
-      <div className="gradient-blur">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
       <div>
         <Header />
-        <div className="w-full h-screen">
-          <WorkGrid gridSize={200} renderItem={CardCell} />
+        <div className="pt-16 w-10/12 mx-auto ">
+          {/* <h1 className="text-4xl text-white mb-12 text-center">Our Work</h1> */}
+          
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {workProjects.map((project) => (
+              <WorkCard
+                key={project.id}
+                image={project.image[1] || project.image[0]}
+                title={project.title}
+                onClick={() => handleProjectClick(project)}
+              />
+            ))}
+          </div>
         </div>
       </div>
+      
+      <ProjectModal
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+        project={selectedProject}
+      />
     </main>
   );
 }

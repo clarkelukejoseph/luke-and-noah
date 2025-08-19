@@ -31,9 +31,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        <FadeInWrapper>{children}</FadeInWrapper>
+        <FadeInWrapper>
+          {children}
+        </FadeInWrapper>
       </body>
     </html>
   );
