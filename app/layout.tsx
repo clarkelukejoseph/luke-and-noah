@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter } from "next/font/google";
+import { Geist_Mono, Inter, Ibarra_Real_Nova } from "next/font/google";
 import "./globals.css";
 import { FadeInWrapper } from "./components/fadeInWrapper";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
@@ -15,6 +10,11 @@ const geistMono = Geist_Mono({
 
 const inter = Inter({
   variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const ibarraRealNova = Ibarra_Real_Nova({
+  variable: "--font-ibarra-real-nova",
   subsets: ["latin"],
 });
 
@@ -31,7 +31,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
+        className={`${inter.variable} ${geistMono.variable} ${ibarraRealNova.variable} antialiased flex flex-col min-h-screen`}
       >
         <FadeInWrapper>
           {children}

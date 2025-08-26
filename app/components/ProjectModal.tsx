@@ -183,6 +183,26 @@ export default function ProjectModal({
                 </p>
               </motion.div>
 
+              {/* Quote */}
+              {project.quotes && project.quotes.length > 0 && (
+                <motion.div 
+                  className="mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: 0.5, duration: 0.4 }
+                  }}
+                  exit={{ opacity: 0, y: 20 }}
+                >
+                  <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
+                    <p className="text-gray-700 leading-relaxed text-base italic">
+                      "{project.quotes[0]}"
+                    </p>
+                  </div>
+                </motion.div>
+              )}
+
               {/* Genre */}
               <motion.div 
                 className="mb-6"
@@ -190,7 +210,7 @@ export default function ProjectModal({
                 animate={{ 
                   opacity: 1, 
                   y: 0,
-                  transition: { delay: 0.5, duration: 0.4 }
+                  transition: { delay: 0.6, duration: 0.4 }
                 }}
                 exit={{ opacity: 0, y: 20 }}
               >
@@ -216,71 +236,77 @@ export default function ProjectModal({
               </motion.div>
 
               {/* Cast */}
-              <motion.div 
-                className="mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { delay: 0.6, duration: 0.4 }
-                }}
-                exit={{ opacity: 0, y: 20 }}
-              >
-                <h2 className="text-xl font-medium mb-3 text-gray-700">Cast</h2>
-                <div className="flex flex-col gap-2">
-                  {project.cast.map((member, index) => (
-                    <motion.div 
-                      key={index} 
-                      className="flex flex-row items-center justify-between text-xl"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ 
-                        opacity: 1, 
-                        x: 0,
-                        transition: { delay: 0.7 + index * 0.1, duration: 0.3 }
-                      }}
-                      exit={{ opacity: 0, x: -20 }}
-                    >
-                      <span className="text-gray-400">{member.name}</span>
-                      <span className="text-gray-700"> as {member.character}</span>
-                    </motion.div>
-                  ))}
-                </div>
-              </motion.div>
+              {project.cast.length > 0 && (
+                <motion.div 
+                  className="mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: 0.7, duration: 0.4 }
+                  }}
+                  exit={{ opacity: 0, y: 20 }}
+                >
+                  <h2 className="text-xl font-medium mb-3 text-gray-700">Cast</h2>
+                  <div className="flex flex-col gap-2">
+                    {project.cast.map((member, index) => (
+                      <motion.div 
+                        key={index} 
+                        className="flex flex-row items-center justify-between text-xl"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ 
+                          opacity: 1, 
+                          x: 0,
+                          transition: { delay: 0.7 + index * 0.1, duration: 0.3 }
+                        }}
+                        exit={{ opacity: 0, x: -20 }}
+                      >
+                        <span className="text-gray-400 text-sm">{member.name}</span>
+                        {member.character && (
+                          <span className="text-gray-700 text-sm"> as {member.character}</span>
+                        )}
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
               
               {/* Crew */}
-              <motion.div 
-                className="mb-6"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ 
-                  opacity: 1, 
-                  y: 0,
-                  transition: { delay: 0.8, duration: 0.4 }
-                }}
-                exit={{ opacity: 0, y: 20 }}
-              >
-                <h2 className="text-xl font-medium mb-3 text-gray-700">Crew</h2>
-                <div className="flex flex-wrap gap-2">
-                  {project.crew.map((member, index) => (
-                    <motion.span 
-                      key={index} 
-                      className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={{ 
-                        opacity: 1, 
-                        scale: 1,
-                        transition: { delay: 0.9 + index * 0.1, duration: 0.3 }
-                      }}
-                      exit={{ opacity: 0, scale: 0.8 }}
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {member.name}: {member.role.join(", ")}
-                    </motion.span>
-                  ))}
-                </div>
-              </motion.div>
+              {project.crew.length > 0 && (
+                <motion.div 
+                  className="mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: 0.9, duration: 0.4 }
+                  }}
+                  exit={{ opacity: 0, y: 20 }}
+                >
+                  <h2 className="text-xl font-medium mb-3 text-gray-700">Crew</h2>
+                  <div className="flex flex-col gap-2">
+                    {project.crew.map((member, index) => (
+                      <motion.div 
+                        key={index} 
+                        className="flex flex-row items-center justify-between text-xl"
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ 
+                          opacity: 1, 
+                          x: 0,
+                          transition: { delay: 0.9 + index * 0.1, duration: 0.3 }
+                        }}
+                        exit={{ opacity: 0, x: -20 }}
+                      >
+                        <span className="text-gray-400 text-sm">{member.name}</span>
+                        <span className="text-gray-700 text-sm">  {member.role.join(", ")}</span>
+                      </motion.div>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
 
-              {/* Streaming Links */}
-              {project.links.length > 0 && (
+              {/* Accolades */}
+              {project.accolades && project.accolades.length > 0 && (
                 <motion.div 
                   className="mb-6"
                   initial={{ opacity: 0, y: 20 }}
@@ -291,8 +317,42 @@ export default function ProjectModal({
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
+                  <h2 className="text-xl font-medium mb-3 text-gray-700">Accolades</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {project.accolades.map((accolade, index) => (
+                      <motion.span 
+                        key={index} 
+                        className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm"
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        animate={{ 
+                          opacity: 1, 
+                          scale: 1,
+                          transition: { delay: 1.0 + index * 0.1, duration: 0.3 }
+                        }}
+                      >
+                        {accolade}
+                      </motion.span>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Streaming Links */}
+              {project.links.length > 0 && (
+                <motion.div 
+                  className="mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ 
+                    opacity: 1, 
+                    y: 0,
+                    transition: { delay: 1.2, duration: 0.4 }
+                  }}
+                  exit={{ opacity: 0, y: 20 }}
+                >
+
+                  {/* change this to just have youtube, the others are supplementary */}
                   <h2 className="text-xl font-medium mb-3 text-gray-700">
-                    Available on:
+                    Project Links:
                   </h2>
                   <div className="flex flex-wrap gap-2">
                     {project.links.map((platform, index) => (
@@ -302,7 +362,7 @@ export default function ProjectModal({
                         animate={{ 
                           opacity: 1, 
                           scale: 1,
-                          transition: { delay: 1.1 + index * 0.1, duration: 0.3 }
+                          transition: { delay: 1.3 + index * 0.1, duration: 0.3 }
                         }}
                         exit={{ opacity: 0, scale: 0.8 }}
                         whileHover={{ scale: 1.05 }}

@@ -1,6 +1,5 @@
 import Header from "./components/Header";
 import ParallaxFloat from "./components/parallaxFloat";
-import Footer from "./components/Footer";
 
 export default function Home() {
   return (
@@ -9,8 +8,6 @@ export default function Home() {
         <Header />
       </div> */}
       <ParallaxFloat />
-      {/* <div className="flex-1" /> */}
-      {/* <Footer /> */}
     </main>
   );
 }
