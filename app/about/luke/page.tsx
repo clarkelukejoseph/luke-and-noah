@@ -7,6 +7,7 @@ import { Button } from "@/components/ui/button";
 import ProjectModal from "@/app/components/ProjectModal";
 import { WorkProject } from "@/app/data/projects";
 import Header from "@/app/components/Header";
+import Link from "next/link";
 
 export default function AboutLuke() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -22,14 +23,14 @@ export default function AboutLuke() {
     <main className="w-full">
       <Header />
       
-    <section className="w-11/12 px-16 py-12">
-      <div className="flex w-full flex-col lg:flex-row gap-12 items-start">
+      <section className="w-11/12 max-sm:w-full px-16 py-12 max-sm:px-4 max-sm:py-8">
+      <div className="flex w-full flex-col lg:flex-row gap-12 max-sm:gap-8 items-start">
         {/* Left Column - Vertical Image */}
-        <div className="flex justify-start  lg:justify-start">
-          <div className="relative w-110 h-160 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm">
+        <div className="flex justify-start lg:justify-start max-sm:w-full">
+          <div className="relative w-110 h-160 max-sm:w-full max-sm:h-120 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm">
             <Image
-              src="/images/test.jpeg"
-              alt="Luke"
+              src="/images/aboutPage/luke.jpg"
+              alt="Noah"
               fill
               className="object-cover"
               priority
@@ -42,7 +43,10 @@ export default function AboutLuke() {
           {/* Name */}
           <div>
             <h1 className="text-5xl font-medium text-white mb-2">Luke Clarke</h1>
-            <h2 className="text-xl text-gray-300 font-light">b. 2001</h2>
+            <div className="flex flex-row gap-2">
+              <h2 className="text-xl text-gray-300 font-light">b. 2001 /</h2>
+              <Link href="https://drive.google.com/file/d/1Q6YL92UGVHWjcDNjq2_BYm97097cfOdy/view?usp=share_link" target="_blank" className="text-xl text-gray-300 font-light">Resume</Link>
+            </div>
           </div>
 
           {/* Biography */}
@@ -64,7 +68,12 @@ export default function AboutLuke() {
 
             {/* Expanded Biography Content */}
             {isExpanded && (
-              <div className="space-y-4">
+              <div 
+                className="space-y-4 animate-in fade-in duration-500 ease-out"
+                style={{
+                  animation: 'fadeIn 0.5s ease-out'
+                }}
+              >
                 <p className="text-gray-300 leading-relaxed">
                   Luke has also been able to apply his artistic talents and
                   instincts into other mediums as well. From his photography
@@ -106,7 +115,7 @@ export default function AboutLuke() {
             {/* Read More/Less Button */}
             <Button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="text-blue-400 hover:text-blue-300 transition-colors ease-in-out underline duration-200 font-medium text-sm border-blue-400 hover:border-blue-300 p-0"
+              className="text-amber-400 hover:text-amber-300 transition-colors ease-in-out underline duration-70 font-medium text-sm border-amber-400 hover:border-amber-300 p-0"
               variant="link"
             >
               {isExpanded ? "Read Less" : "Read More"}
@@ -135,12 +144,12 @@ export default function AboutLuke() {
           </div>
 
           {/* Works Section */}
-          <div className="space-y-4">
+          <div className="space-y-4 max-sm:w-full">
             <h3 className="text-3xl font-medium text-white mb-4">Work</h3>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 max-sm:flex-col max-sm:w-full">
               {getLukeProjects().map((project) => (
-                <div key={project.id}>
-                  <div className="relative w-40 h-60 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-200">
+                <div key={project.id} className="max-sm:w-full">
+                  <div className="relative w-40 h-60 max-sm:w-full max-sm:h-120 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-70">
                     <div onClick={() => handleProjectClick(project)}>
                       <Image
                         src={project.image[0]}

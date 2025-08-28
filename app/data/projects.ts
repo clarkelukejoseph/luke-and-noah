@@ -522,7 +522,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 18,
-    image: [],
+    image: ["/images/fsu/gaming/gaming.jpg"],
     title: "FSU Gaming Committee News Featurette",
     description: "This short news featurette highlights the Florida State University Gaming Committee club and the community these members have found amongst each other.",
     genre: ["News Featurette"],
@@ -604,7 +604,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 22,
-    image: [],
+    image: ["/images/ghostAtCostumeParty/screenshot.jpg"],
     title: "A Ghost at a Costume Party",
     description: "This 2024 short film by animator Giovanni Rodriguez features the debut voice acting performance of Luke Clarke, which appears throughout the first minute and a half.",
     genre: ["Animation", "Comedy", "Drama"],

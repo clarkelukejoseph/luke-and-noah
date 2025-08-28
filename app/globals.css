@@ -1,4 +1,7 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   --background: linear-gradient(180deg, #000000 0%, #282828 100%);
@@ -134,4 +137,16 @@ body {
   z-index: 8;
   backdrop-filter: blur(64px);
   mask: linear-gradient(to top, rgba(0, 0, 0, 0) 87.5%, rgba(0, 0, 0, 1) 100%);
+}
+
+/* Fade in animation for expanded content */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

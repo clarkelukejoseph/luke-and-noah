@@ -75,10 +75,10 @@ export default function WorkPage() {
                 <div key={filter} className="flex items-center">
                   <button
                     onClick={() => handleFilterClick(filter)}
-                    className={`text-2xl font-normal transition-all duration-200 ${
+                    className={`text-2xl font-normal transition-all duration-70 ${
                       selectedFilters.includes(filter)
                         ? " text-amber-400"
-                        : " text-white hover:text-amber-400 transition-all duration-200 ease-in-out"
+                        : " text-white hover:text-amber-400 transition-all duration-70 ease-in-out"
                     }`}
                   >
                     {filter}
@@ -95,7 +95,7 @@ export default function WorkPage() {
           <div className="fixed bottom-0 left-0 right-0 z-50 mb-10">
             <div className="relative mx-auto w-fit">
               {/* Progressive Blur Container */}
-              <div className="relative overflow-hidden rounded-full bg-black/70 backdrop-blur-md" style={{ maxWidth: '500px' }}>
+              <div className="relative overflow-hidden rounded-full bg-black/70 backdrop-blur-md max-w-[500px] max-sm:max-w-[400px]">
                 {/* Scrollable Filter Container - Shows 3 filters but allows scrolling */}
                 <div 
                   className="flex items-center px-2 py-2 overflow-x-auto scrollbar-hide"
@@ -113,7 +113,7 @@ export default function WorkPage() {
                     <button
                       key={filter}
                       onClick={() => handleFilterClick(filter)}
-                      className={`whitespace-nowrap text-xl font-normal tracking-wide transition-all duration-200 ease-linear text-center rounded-full px-8 py-2 ${
+                      className={`whitespace-nowrap text-xl max-sm:text-lg font-normal tracking-wide transition-all duration-70 ease-linear text-center rounded-full px-8 py-2 ${
                         selectedFilters.includes(filter)
                           ? "text-amber-400 bg-white/10"
                           : "text-white hover:text-amber-400"

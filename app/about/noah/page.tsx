@@ -24,14 +24,14 @@ export default function AboutNoah() {
     <main className="w-full">
       <Header />
       
-    <section className="w-11/12 px-16 py-12">
-      <div className="flex w-full flex-col lg:flex-row gap-12 items-start">
+    <section className="w-11/12 max-sm:w-full px-16 py-12 max-sm:px-4 max-sm:py-8">
+      <div className="flex w-full flex-col lg:flex-row gap-12 max-sm:gap-8 items-start">
         {/* Left Column - Vertical Image */}
-        <div className="flex justify-start  lg:justify-start">
-          <div className="relative w-110 h-160 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm">
+        <div className="flex justify-start lg:justify-start max-sm:w-full">
+          <div className="relative w-110 h-160 max-sm:w-full max-sm:h-120 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm">
             <Image
-              src="/images/test.jpeg"
-              alt="Luke"
+              src="/images/aboutPage/noah.jpg"
+              alt="Noah"
               fill
               className="object-cover"
               priority
@@ -61,7 +61,10 @@ export default function AboutNoah() {
 
             {/* Expanded Biography Content */}
             {isExpanded && (
-              <div className="space-y-4">
+              <div className="space-y-4 animate-in fade-in duration-500 ease-out"
+              style={{
+                animation: 'fadeIn 0.5s ease-out'
+              }}>
                 <p className="text-gray-300 leading-relaxed">
                   I was born and raised in Montgomery County, Maryland. I had a
                   love of all things media growing up, and that led me to join
@@ -112,7 +115,7 @@ export default function AboutNoah() {
             {/* Read More/Less Button */}
             <Button
               onClick={() => setIsExpanded(!isExpanded)}
-              className="text-blue-400 hover:text-blue-300 transition-colors ease-in-out underline duration-200 font-medium text-sm border-blue-400 hover:border-blue-300 p-0"
+              className="text-amber-400 hover:text-amber-300 transition-colors ease-in-out underline duration-70 font-medium text-sm border-amber-400 hover:border-amber-300 p-0"
               variant="link"
             >
               {isExpanded ? "Read Less" : "Read More"}
@@ -141,12 +144,12 @@ export default function AboutNoah() {
           </div> */}
 
           {/* Works Section */}
-          <div className="space-y-4">
+          <div className="space-y-4 max-sm:w-full">
             <h3 className="text-3xl font-medium text-white mb-4">Work</h3>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-4 max-sm:flex-col max-sm:w-full">
               {getNoahProjects().map((project) => (
-                <div key={project.id}>
-                  <div className="relative w-40 h-60 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-200">
+                <div key={project.id} className="max-sm:w-full">
+                  <div className="relative w-40 h-60 max-sm:w-full max-sm:h-120 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-70">
                     <div onClick={() => handleProjectClick(project)}>
                       <Image
                         src={project.image[0]}

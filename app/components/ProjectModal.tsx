@@ -57,7 +57,7 @@ export default function ProjectModal({
 
           {/* Modal Content */}
           <motion.div
-            className="relative bg-white rounded-lg max-w-2xl w-full max-h-[90vh] overflow-y-auto shadow-2xl"
+            className="relative bg-white rounded-lg max-w-2xl w-full max-sm:w-11/12 max-h-[90vh] overflow-y-auto shadow-2xl"
             initial={{ 
               opacity: 0,
               scale: 0.8,
@@ -133,7 +133,7 @@ export default function ProjectModal({
               exit={{ opacity: 0, y: -20 }}
             >
               <Image
-                src={project.image[1] || project.image[0]}
+                src={project.image[1] || project.image[0] || "/images/test.jpeg"}
                 alt={project.title}
                 fill
                 className="object-cover rounded-t-lg"
@@ -154,7 +154,7 @@ export default function ProjectModal({
             >
               <div className="text-black">
                 <motion.h1 
-                  className="text-3xl font-medium mb-2"
+                  className="text-3xl font-medium mb-2 max-sm:text-2xl"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ 
                     opacity: 1, 
@@ -163,7 +163,7 @@ export default function ProjectModal({
                   }}
                   exit={{ opacity: 0, x: -20 }}
                 >
-                  {project.title} <span className="text-gray-400 text-2xl">{project.releaseYear}</span>
+                  {project.title} <span className="text-gray-400 text-2xl max-sm:text-xl">{project.releaseYear}</span>
                 </motion.h1>
               </div>
               
@@ -178,7 +178,7 @@ export default function ProjectModal({
                 }}
                 exit={{ opacity: 0, y: 20 }}
               >
-                <p className="text-gray-700 leading-relaxed text-base">
+                <p className="text-gray-700 leading-relaxed text-base max-sm:text-sm">
                   {project.description}
                 </p>
               </motion.div>
@@ -196,7 +196,7 @@ export default function ProjectModal({
                   exit={{ opacity: 0, y: 20 }}
                 >
                   <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                    <p className="text-gray-700 leading-relaxed text-base italic">
+                    <p className="text-gray-700 leading-relaxed text-base max-sm:text-sm italic">
                       "{project.quotes[0]}"
                     </p>
                   </div>
@@ -214,7 +214,7 @@ export default function ProjectModal({
                 }}
                 exit={{ opacity: 0, y: 20 }}
               >
-                <h2 className="text-xl font-medium mb-3 text-gray-700">Genre</h2>
+                <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">Genre</h2>
                 <div className="flex flex-wrap gap-2">
                   {project.genre.map((genre, index) => (
                     <motion.span 
@@ -247,7 +247,7 @@ export default function ProjectModal({
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <h2 className="text-xl font-medium mb-3 text-gray-700">Cast</h2>
+                  <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">Cast</h2>
                   <div className="flex flex-col gap-2">
                     {project.cast.map((member, index) => (
                       <motion.div 
@@ -283,7 +283,7 @@ export default function ProjectModal({
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <h2 className="text-xl font-medium mb-3 text-gray-700">Crew</h2>
+                  <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">Crew</h2>
                   <div className="flex flex-col gap-2">
                     {project.crew.map((member, index) => (
                       <motion.div 
@@ -317,7 +317,7 @@ export default function ProjectModal({
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <h2 className="text-xl font-medium mb-3 text-gray-700">Accolades</h2>
+                  <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">Accolades</h2>
                   <div className="flex flex-wrap gap-2">
                     {project.accolades.map((accolade, index) => (
                       <motion.span 
@@ -351,7 +351,7 @@ export default function ProjectModal({
                 >
 
                   {/* change this to just have youtube, the others are supplementary */}
-                  <h2 className="text-xl font-medium mb-3 text-gray-700">
+                  <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">
                     Project Links:
                   </h2>
                   <div className="flex flex-wrap gap-2">
@@ -371,7 +371,7 @@ export default function ProjectModal({
                         <Link
                           href={platform.link}
                           target="_blank"
-                          className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-200 ease-in-out"
+                          className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-70 ease-in-out"
                         >
                           {platform.name}
                         </Link>
