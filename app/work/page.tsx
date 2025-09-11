@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import Header from "../components/Header";
 import WorkCard from "../components/WorkCard";
 import ProjectModal from "../components/ProjectModal";
@@ -24,6 +24,16 @@ const FILTER_CATEGORIES = [
 ];
 
 export default function WorkPage() {
+  useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.body.classList.add('no-scrollbar');
+    }
+    return () => {
+      if (typeof document !== 'undefined') {
+        document.body.classList.remove('no-scrollbar');
+      }
+    };
+  }, []);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProject, setSelectedProject] = useState<WorkProject | null>(null);
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
@@ -66,30 +76,6 @@ export default function WorkPage() {
       <div>
         <Header />
         <div className="pt-16 pb-16 w-10/12 mx-auto ">
-          {/* <h1 className="text-4xl text-white mb-12 text-center">Our Work</h1> */}
-          
-          {/* Filter Tabs - OLD IMPLEMENTATION (COMMENTED OUT) */}
-          {/* <div className="mb-12 flex flex-row w-full">
-            <div className="flex flex-wrap items-center justify-center mb-4 w-full">
-              {FILTER_CATEGORIES.map((filter, index) => (
-                <div key={filter} className="flex items-center">
-                  <button
-                    onClick={() => handleFilterClick(filter)}
-                    className={`text-2xl font-normal transition-all duration-70 ${
-                      selectedFilters.includes(filter)
-                        ? " text-amber-400"
-                        : " text-white hover:text-amber-400 transition-all duration-70 ease-in-out"
-                    }`}
-                  >
-                    {filter}
-                  </button>
-                  {index < FILTER_CATEGORIES.length - 1 && (
-                    <span className="text-white text-2xl mx-2">/</span>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div> */}
 
           {/* NEW: Fixed Bottom Filter Bar */}
           <div className="fixed bottom-0 left-0 right-0 z-50 mb-10">
@@ -107,6 +93,18 @@ export default function WorkPage() {
                     e.preventDefault();
                     const container = e.currentTarget;
                     container.scrollLeft += e.deltaY;
+                  }}
+                  onMouseEnter={() => {
+                    if (typeof document !== 'undefined') document.body.style.overflow = 'hidden';
+                  }}
+                  onMouseLeave={() => {
+                    if (typeof document !== 'undefined') document.body.style.overflow = '';
+                  }}
+                  onTouchStart={() => {
+                    if (typeof document !== 'undefined') document.body.style.overflow = 'hidden';
+                  }}
+                  onTouchEnd={() => {
+                    if (typeof document !== 'undefined') document.body.style.overflow = '';
                   }}
                 >
                   {FILTER_CATEGORIES.map((filter, index) => (
@@ -140,6 +138,7 @@ export default function WorkPage() {
                 title={project.title}
                 onClick={() => handleProjectClick(project)}
                 opacity={project.opacity}
+                comingSoon={project.comingSoon}
               />
             ))}
           </div>
