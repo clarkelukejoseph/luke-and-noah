@@ -14,10 +14,21 @@ export interface WorkProject {
   lukeWork?: boolean;
   noahWork?: boolean;
   comingSoon?: boolean;
+  gifLink?: string;
 }
-// add optional quote and award property to projects
-// need to add property for grouping projects into categories for filters
-// on the about page project modal, we will hide cast and just have what luke/noah worked on for the project
+// first image in image array is the poster image
+
+// order of projects that should be near the top
+// Yell Occult - Mr. Toad’s Wild Ride (Official Music Video)
+// Untitled Documentary short on Tusheti, Georgia
+// Chet Larson
+// Chet Larson Coda
+// Convenience
+// The Small Victorian Boy
+// Who Is It That is Going to Carry My Pain? And For Whom?
+// President TV of The United States - Did (Official Music Video)
+// The Energy Solution - The End of 2010 (Official Music Video)
+// The Energy Solution - Talk to Me (Official Music Video)
 
 export const workProjects: WorkProject[] = [
   {
@@ -91,7 +102,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 2,
-    image: ["/images/moviePosters/chetLarsonCoda.jpg"],
+    image: ["/images/moviePosters/chetLarsonCodaVertical.jpg", "/images/moviePosters/chetLarsonCoda.jpg"],
     title: "Chet Larson Coda",
     description:
       "Following the moderate success of the eponymous documentary made about him, former internet personality and content creator Chet Larson decides to direct the films direct sequel with the help of the originals director, Ernie Jackson. However, as filming progresses, Ernie realizes that he and Chet's personalities are too contrasting for this artistic partnership to continue flourishing.",
@@ -149,7 +160,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 3,
-    image: ["/images/moviePosters/convenience.jpg"],
+    image: ["/images/moviePosters/convenienceVertical.jpg", "/images/moviePosters/convenience.jpg"],
+    gifLink: "/images/convenience/convenience.mp4",
     title: "Convenience",
     lukeWork: true,
     noahWork: true,
@@ -207,9 +219,11 @@ export const workProjects: WorkProject[] = [
   {
     id: 4,
     image: [
+      "/images/victorianBoy/victorianBoyVertical.jpg",
       "/images/moviePosters/victorianBoy.jpg",
       "/images/victorianBoy/screenshot.png",
     ],
+    gifLink: "/images/victorianBoy/victorianBoy.mp4",
     title: "The Small Victorian Boy",
     description:
       "In post Civil War West Virginia, 9 year old Little Jamie has his life forever changed when he unexpectedly meets his Uncle Vernon, who tells him that both his parents died only two nights ago. However, not all is as it seems with this strange man.",
@@ -277,7 +291,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 5,
-    image: ["/images/carrymyPain/screenshot.jpg"],
+    image: ["/images/carrymyPain/posterVertical.jpg", "/images/carrymyPain/screenshot.jpg"],
+    gifLink: "/images/carrymyPain/whoIsIt.mp4",
     title: "Who Is It That Is Going To Carry My Pain? And For Whom?",
     description:
       "In this short parody of classic American soap operas, Williamson discovers that his wife is having an affair with their pastor.",
@@ -325,7 +340,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 6,
-    image: ["/images/presidentTV/screenshot.jpeg"],
+    image: ["/images/presidentTV/posterVertical.jpg", "/images/presidentTV/screenshot.jpeg"],
+    gifLink: "/images/presidentTV/presidentTVGif.mp4",
     title: "President TV of The United States - Did (Official Music Video)",
     description:
       "In the first ever music video for President TV of the United States, a man sees his understanding of the world around shift as he wakes up with this music video on. Achieved through a mixture of footage shot on an Xbox Kinect, visual overlay trickery, and traditionally shot camera work, this video marks a visual turning point for Luke and Noah as directors.",
@@ -375,7 +391,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 7,
-    image: ["/images/energySolution/2010_screenshot.jpg"],
+    image: ["/images/energySolution/2010Vertical.jpg", "/images/energySolution/2010_screenshot.jpg"],
+    gifLink: "/images/energySolution/endOf2010.mp4",
     title: "The Energy Solution - The End of 2010 (Official Music Video)",
     description:
       "In the first ever music video for the Energy Solution, wealthy musician and entrepreneur Sam lives a life of wealth and decadence. However, loneliness and isolation plague the Washington DC native deep in the heart of Pittsburgh.",
@@ -427,7 +444,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 8,
-    image: ["/images/energySolution/talkToMe.png"],
+    image: ["/images/energySolution/talkToMeVertical.jpg", "/images/energySolution/talkToMe.png"],
+    gifLink: "/images/energySolution/talkToMe.mp4",
     title: "The Energy Solution - Talk to Me (Official Music Video)",
     description:
       "In Luke and Noah's second music video for the Energy Solution, wealthy musician and entrepreneur Sam lives a life of wealth and decadence in Pittsburgh, Pennsylvania that is contrasted by isolation and depression. This is brought on by his love of Washington DC's hockey team, aka Pittsburgh's rivals. He must make a decision if he is going to give it all up to embrace the team he loves.",
@@ -468,6 +486,80 @@ export const workProjects: WorkProject[] = [
           "Music Video",
         ],
       },
+    ],
+  },
+  {
+    id: 47,
+    image: ["/images/yellOccult/screenshot.png"],
+    title: "Yell Occult - Mr. Toad's Wild Ride (Music Video)",
+    gifLink: "/images/yellOccult/toadGif.mp4",
+    description:
+      "In this music video for experimental rock and electronic group Yell Occult, the band is drawn into a wild ride at the hands of a strange entity as they attempt to flee the desolate waste of Florida for greener pastures up North.",
+    genre: ["Music Video", "Horror", "Art-House", "Experimental"],
+    releaseYear: 2025,
+    comingSoon: true,
+    cast: [
+      { name: "Lilith Videt Weeks", character: "Herself" },
+      { name: "Isaac Lucy", character: "Himself" },
+      { name: "Arianna Ganley", character: "Herself" },
+      { name: "Patrick Flanagan", character: "Himself" },
+    ],
+    crew: [
+      {
+        name: "Luke & Noah Clarke",
+        role: ["Director", "Editor", "Cinematographer"],
+      },
+      { name: "Luke Clarke", role: ["Producer"] },
+      { name: "Julianna Gibbons", role: ["Key Grip"] },
+      { name: "Samuel Ingram", role: ["Key Grip"] },
+      { name: "Elena Brace", role: ["Production Assistant"] },
+      { name: "Abbie Greene", role: ["Production Assistant"] },
+      { name: "Yamile Abuid", role: ["Additional Photography"] },
+    ],
+    links: [],
+    groupings: [
+      {
+        name: "Luke",
+        group: [
+          "Directing",
+          "Producing",
+          "Editing",
+          "Cinematography",
+          "Music Video",
+        ],
+      },
+      {
+        name: "Noah",
+        group: ["Directing", "Editing", "Cinematography", "Music Video"],
+      },
+    ],
+  },
+  {
+    id: 49,
+    image: ["/images/tsovaTushDocu/screenshot.jpg"],
+    gifLink: "/images/tsovaTushDocu/georgiaDoc.mp4",
+    title: "Untitled Documentary Short (Tsova-Tush community)",
+    description:
+      "This documentary short will focus on the Tsova-Tush community from Tusheti, who speak the critically endangered Tsova-Tush language. With fewer than a couple hundred fluent speakers remaining, the language faces extinction within decades. This ambitious project, which is set to be filmed this summer, will help to document the Tsova-Tush language, culture, and traditions in the short time that it is still possible.",
+    genre: ["Documentary"],
+    releaseYear: 2025,
+    comingSoon: true,
+    cast: [],
+    crew: [
+      {
+        name: "Luke & Noah Clarke",
+        role: ["Director" ],
+      },
+      { name: "Luke Clarke", role: ["Producer"] },
+      { name: "Noah Clarke", role: ["Producer"] },
+      { name: "Konstantine Kahadze", role: ["Producer"] },
+      { name: "Tornike Koplatadze", role: ["Executive Producer"] },
+      { name: "Howard Cui", role: ["Production Sound Engineer"] },
+    ],
+    links: [],
+    groupings: [
+      { name: "Luke", group: ["Directing", "Producing"] },
+      { name: "Noah", group: ["Directing", "Producing"] },
     ],
   },
   {
@@ -943,8 +1035,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 25,
-    image: ["/images/hairlessDog/screenshot.jpg"],
-    title: "Hairless Dog or The Mirror March",
+    image: ["/images/hairlessDog/hairlessDogVertical.jpg", "/images/hairlessDog/screenshot.jpg"],
+    title: "Hairless Dog",
     description:
       "In this 2023 black and white dramedy short by writer and director Tommy Adzema, Noah plays Ian alongside Sara Gonzalez as Lucy.",
     genre: ["Drama"],
@@ -1150,7 +1242,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 31,
-    image: ["/images/mountains/screenshot.jpg"],
+    image: ["/images/mountains/mountainsVertical.jpg", "/images/mountains/screenshot.jpg"],
     title: "Mountains",
     description:
       "An abstract portrayal of mountains created, shot, and edited by Luke",
@@ -1169,7 +1261,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 32,
-    image: ["/images/artificeCD/cd_3.jpeg", "/images/artificeCD/cd_7.jpeg"],
+    image: ["/images/artificeCD/artificeVertical.jpeg", "/images/artificeCD/cd_3.jpeg", "/images/artificeCD/cd_7.jpeg"],
     title: "Artifice CD Art Direction",
     description:
       "Cover Art, CD design, and general art direction for the release of the Ambient Electronic EP Artifice by Virginia based musician Perky. The art was designed to reflect the seasonal themes and soothing tones of the works 4 songs.",
@@ -1532,51 +1624,7 @@ export const workProjects: WorkProject[] = [
     ],
   },
   // projects that are coming soon
-  {
-    id: 47,
-    image: ["/images/yellOccult/screenshot.png"],
-    title: "Yell Occult - Mr. Toad's Wild Ride (Music Video)",
-    description:
-      "In this music video for experimental rock and electronic group Yell Occult, the band is drawn into a wild ride at the hands of a strange entity as they attempt to flee the desolate waste of Florida for greener pastures up North.",
-    genre: ["Music Video", "Horror", "Art-House", "Experimental"],
-    releaseYear: 2025,
-    comingSoon: true,
-    cast: [
-      { name: "Lilith Videt Weeks", character: "Herself" },
-      { name: "Isaac Lucy", character: "Himself" },
-      { name: "Arianna Ganley", character: "Herself" },
-      { name: "Patrick Flanagan", character: "Himself" },
-    ],
-    crew: [
-      {
-        name: "Luke & Noah Clarke",
-        role: ["Director", "Editor", "Cinematographer"],
-      },
-      { name: "Luke Clarke", role: ["Producer"] },
-      { name: "Julianna Gibbons", role: ["Key Grip"] },
-      { name: "Samuel Ingram", role: ["Key Grip"] },
-      { name: "Elena Brace", role: ["Production Assistant"] },
-      { name: "Abbie Greene", role: ["Production Assistant"] },
-      { name: "Yamile Abuid", role: ["Additional Photography"] },
-    ],
-    links: [],
-    groupings: [
-      {
-        name: "Luke",
-        group: [
-          "Directing",
-          "Producing",
-          "Editing",
-          "Cinematography",
-          "Music Video",
-        ],
-      },
-      {
-        name: "Noah",
-        group: ["Directing", "Editing", "Cinematography", "Music Video"],
-      },
-    ],
-  },
+  
   {
     id: 48,
     image: ["/images/bigScruff/screenshot.png"],
@@ -1617,33 +1665,7 @@ export const workProjects: WorkProject[] = [
       },
     ],
   },
-  {
-    id: 49,
-    image: ["/images/tsovaTushDocu/screenshot.jpg"],
-    title: "Untitled Documentary Short (Tsova-Tush community)",
-    description:
-      "This documentary short will focus on the Tsova-Tush community from Tusheti, who speak the critically endangered Tsova-Tush language. With fewer than a couple hundred fluent speakers remaining, the language faces extinction within decades. This ambitious project, which is set to be filmed this summer, will help to document the Tsova-Tush language, culture, and traditions in the short time that it is still possible.",
-    genre: ["Documentary"],
-    releaseYear: 2025,
-    comingSoon: true,
-    cast: [],
-    crew: [
-      {
-        name: "Luke & Noah Clarke",
-        role: ["Director" ],
-      },
-      { name: "Luke Clarke", role: ["Producer"] },
-      { name: "Noah Clarke", role: ["Producer"] },
-      { name: "Konstantine Kahadze", role: ["Producer"] },
-      { name: "Tornike Koplatadze", role: ["Executive Producer"] },
-      { name: "Howard Cui", role: ["Production Sound Engineer"] },
-    ],
-    links: [],
-    groupings: [
-      { name: "Luke", group: ["Directing", "Producing"] },
-      { name: "Noah", group: ["Directing", "Producing"] },
-    ],
-  },
+  
   {
     id: 50,
     image: ["/images/wvfsDocu/screenshot.jpg"],

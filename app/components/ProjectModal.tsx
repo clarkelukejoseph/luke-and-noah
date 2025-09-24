@@ -132,12 +132,26 @@ export default function ProjectModal({
               }}
               exit={{ opacity: 0, y: -20 }}
             >
-              <Image
-                src={project.image[1] || project.image[0] || "/images/test.jpeg"}
-                alt={project.title}
-                fill
-                className="object-cover rounded-t-lg"
-              />
+              {project.gifLink ? (
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover rounded-t-lg"
+                  poster={project.image[1]}
+                >
+                  <source src={project.gifLink} type="video/mp4" />
+                </video>
+              ) : (
+                <Image
+                  src={project.image[1]}
+                  alt={project.title}
+                  fill
+                  className="object-cover rounded-t-lg"
+                  priority
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-t-lg" />
             </motion.div>
 

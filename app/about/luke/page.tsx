@@ -155,7 +155,7 @@ export default function AboutLuke() {
                         src={project.image[0]}
                         alt={project.title}
                         fill
-                        className="object-cover"
+                        className="object-fill"
                       />
                     </div>
                   </div>
