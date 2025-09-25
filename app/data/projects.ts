@@ -220,8 +220,8 @@ export const workProjects: WorkProject[] = [
     id: 4,
     image: [
       "/images/victorianBoy/victorianBoyVertical.jpg",
-      "/images/moviePosters/victorianBoy.jpg",
       "/images/victorianBoy/screenshot.png",
+      "/images/moviePosters/victorianBoy.jpg",
     ],
     gifLink: "/images/victorianBoy/victorianBoy.mp4",
     title: "The Small Victorian Boy",
