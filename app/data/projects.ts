@@ -738,7 +738,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 14,
-    image: ["/images/fsu/mentorTransfer/screenshot.png"],
+    image: ["/images/fsu/mentortransfer/screenshot.png"],
     title: "FSU Mentor Transfer Program Featurette",
     description:
       "This news featurette, written by reporter Kaitlyn Walsh, highlights FSU's mentor program to help assist incoming transfer students.",
