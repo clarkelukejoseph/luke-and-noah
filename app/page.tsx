@@ -25,7 +25,7 @@ export default function Home() {
         <div className="absolute inset-0 w-full h-full pointer-events-auto" />
         
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10  text-white text-center px-4 text-4xl gap-8">
-          <h1 className="font-xanh-mono w-6/12 max-sm:w-full max-sm:text-2xl leading-relaxed">Luke and Noah are a filmmaking and artist duo based in the Maryland area.</h1>
+          <h1 className="w-6/12 max-sm:w-full max-sm:text-2xl leading-relaxed">Luke and Noah are a filmmaking and artist duo based in the Maryland area.</h1>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
           <p className="text-xl max-sm:text-base z-50 hover:scale-110 transition-transform bg-white text-black rounded-full py-2 px-6 cursor-pointer">
             <Link href="/work">View Work</Link>
