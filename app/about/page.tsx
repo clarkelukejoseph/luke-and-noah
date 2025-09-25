@@ -1,25 +1,37 @@
+"use client";
+
 import Link from "next/link";
 import Header from "../components/Header";
+import LukeSection from "./luke/page";
+import NoahSection from "./noah/page";
 
 export default function AboutPage() {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
   return (
-    <main className="w-full min-h-screen flex flex-col">
+    <main className="w-full">
       <Header />
-      <div className="flex-1 flex items-end">
-        <div className="w-full px-16 max-sm:px-6 py-12 max-sm:py-8 text-2xl max-sm:text-base gap-1">
-        <Link
-          href="/about/luke"
-          className="hover:text-amber-400 transition-all duration-70 inline text-amber-200"
+
+      {/* luke and noah section */}
+      <div className="h-screen flex items-end luke-noah-section">
+        <div className="w-full px-16 max-sm:px-6 pb-36 max-sm:pb-8 text-3xl max-sm:text-base gap-1 leading-10">
+        <button
+          onClick={() => scrollToSection('luke-section')}
+          className="hover:text-amber-400 transition-all duration-70 inline text-amber-200 cursor-pointer"
         >
           Luke
-        </Link>{" "}
+        </button>{" "}
         &{" "}
-        <Link
-          href="/about/noah"
-          className="hover:text-amber-400 transition-all duration-70 inline text-amber-200"
+        <button
+          onClick={() => scrollToSection('noah-section')}
+          className="hover:text-amber-400 transition-all duration-70 inline text-amber-200 cursor-pointer"
         >
           Noah
-        </Link>{" "}
+        </button>{" "}
         Clarke are Maryland-based filmmakers, videographers and artists. Born,
         raised, and based in the DC area, the brothers also frequently work in
         Baltimore, Pennsylvania, Florida, California and the Tri State area. The
@@ -36,6 +48,16 @@ export default function AboutPage() {
         <Link href="/work" className="hover:text-amber-400 transition-all duration-70 ease-in-out inline text-amber-200">here</Link> or contact them{" "}
         <Link href="/contact" className="hover:text-amber-400 transition-all duration-70 ease-in-out inline text-amber-200">here</Link>.
         </div>
+      </div>
+
+      {/* Luke Section */}
+      <div id="luke-section">
+        <LukeSection />
+      </div>
+
+      {/* Noah Section */}
+      <div id="noah-section">
+        <NoahSection />
       </div>
     </main>
   );

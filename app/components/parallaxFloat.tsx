@@ -26,7 +26,7 @@ const ParallaxFloat = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.88, delay: 1.5 }}
       >
-        <h1 className="text-3xl sm:text-4xl md:text-5xl z-50 text-white font-ibarra-real-nova italic">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl z-50 text-white font-xanh-mono italic">
           Luke & Noah Clarke
         </h1>
         <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">

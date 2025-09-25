@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import ProjectModal from "@/app/components/ProjectModal";
 import { WorkProject } from "@/app/data/projects";
-import Header from "@/app/components/Header";
 
 export default function AboutNoah() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -21,9 +20,7 @@ export default function AboutNoah() {
   };
 
   return (
-    <main className="w-full">
-      <Header />
-      
+    <main className="w-full">      
     <section className="w-11/12 max-sm:w-full px-16 py-12 max-sm:px-4 max-sm:py-8">
       <div className="flex w-full flex-col lg:flex-row gap-12 max-sm:gap-8 items-start">
         {/* Left Column - Vertical Image */}
@@ -50,7 +47,7 @@ export default function AboutNoah() {
           </div>
 
           {/* Biography */}
-          <div className="space-y-4 text-base">
+          <div className="space-y-4 text-lg">
             <p className="text-gray-300 leading-relaxed">
               My name is Noah Clarke, and I am a professional videographer,
               filmmaker and multimedia artist. Throughout my 10 years of

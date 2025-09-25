@@ -4,7 +4,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: linear-gradient(180deg, #000000 0%, #282828 100%);
+  --background: #000000;
   --foreground: #efefef;
 }
 
@@ -13,11 +13,11 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-inter);
   --font-mono: var(--font-geist-mono);
-  --font-ibarra-real-nova: var(--font-ibarra-real-nova);
+  --font-xanh-mono: var(--font-xanh-mono);
 }
 
-.font-ibarra-real-nova {
-  font-family: var(--font-ibarra-real-nova), serif;
+.font-xanh-mono {
+  font-family: var(--font-xanh-mono), serif;
 }
 
 /* Hide scrollbar for webkit browsers */

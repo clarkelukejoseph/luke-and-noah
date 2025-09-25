@@ -6,7 +6,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import ProjectModal from "@/app/components/ProjectModal";
 import { WorkProject } from "@/app/data/projects";
-import Header from "@/app/components/Header";
 import Link from "next/link";
 
 export default function AboutLuke() {
@@ -20,8 +19,7 @@ export default function AboutLuke() {
   };
 
   return (
-    <main className="w-full">
-      <Header />
+    <main className="w-full pb-36">
       
       <section className="w-11/12 max-sm:w-full px-16 py-12 max-sm:px-4 max-sm:py-8">
       <div className="flex w-full flex-col lg:flex-row gap-12 max-sm:gap-8 items-start">
@@ -50,7 +48,7 @@ export default function AboutLuke() {
           </div>
 
           {/* Biography */}
-          <div className="space-y-4 text-base">
+          <div className="space-y-4 text-lg">
             <p className="text-gray-300 leading-relaxed">
               Through marrying the comedic and dramatic sides of narrative
               filmmaking with the medium's oldest and newest techniques, Luke
@@ -127,7 +125,7 @@ export default function AboutLuke() {
             <h3 className="text-3xl font-medium text-white mb-4">
               Highlight Reel
             </h3>
-            <div className="w-full max-w-2xl">
+            <div className="w-full">
               <div
                 className="relative w-full"
                 style={{ paddingBottom: "56.25%" }}

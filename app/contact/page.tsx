@@ -33,9 +33,10 @@ export default function Contact() {
     <main className="w-full">
       <Header />
       
-      <section className="w-11/12 max-sm:w-full px-16 py-12 max-sm:px-8 max-sm:py-8 max-sm:mx-auto">
-        <div className="max-w-xl mx-auto max-sm:w-full">
+      <section className="w-12/12 max-sm:w-full px-16 py-12 max-sm:px-8 max-sm:py-8 max-sm:mx-auto max-sm:mt-10">
+        <div className="max-w-full mx-auto max-sm:w-full flex flex-row items-end justify-start max-sm:flex-col max-sm:items-center max-sm:justify-center gap-20">
           {/* Page Title */}
+          <div className="w-8/12 max-sm:w-full">   
           <div className="mb-12">
             <h1 className="text-5xl font-medium text-white mb-4 max-sm:text-2xl">Contact</h1>
             <p className="text-gray-300 text-lg max-sm:text-base leading-relaxed">
@@ -122,9 +123,9 @@ export default function Contact() {
               Send Message
             </button>
           </form>
-
+          </div>
           {/* Additional Contact Info */}
-          <div className="mt-12 pt-8 border-t border-gray-600">
+          <div className="w-3/12 max-sm:w-full">
             <h3 className="text-xl font-medium text-white mb-4">Other Ways to Connect</h3>
             <div className="space-y-2 text-gray-300">
               <p>Email: <a href="mailto:clarkelukejoseph@gmail.com" className="text-amber-400 hover:text-amber-300 transition-colors duration-70">clarkelukejoseph@gmail.com</a></p>

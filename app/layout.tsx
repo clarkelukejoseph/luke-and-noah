@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist_Mono, Inter, Ibarra_Real_Nova } from "next/font/google";
+import { Geist_Mono, Inter, Xanh_Mono } from "next/font/google";
 import "./globals.css";
 import { FadeInWrapper } from "./components/fadeInWrapper";
 
@@ -13,8 +13,9 @@ const inter = Inter({
   subsets: ["latin"],
 });
 
-const ibarraRealNova = Ibarra_Real_Nova({
-  variable: "--font-ibarra-real-nova",
+const xanhMono = Xanh_Mono({
+  variable: "--font-xanh-mono",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -31,7 +32,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable} ${geistMono.variable} ${ibarraRealNova.variable} antialiased flex flex-col min-h-screen`}
+        className={`${inter.variable} ${geistMono.variable} ${xanhMono.variable} antialiased flex flex-col min-h-screen`}
       >
         <FadeInWrapper>
           {children}
