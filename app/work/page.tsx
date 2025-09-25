@@ -134,7 +134,7 @@ export default function WorkPage() {
             {filteredProjects.map((project) => (
               <WorkCard
                 key={project.id}
-                image={project.image[1] || project.image[0]}
+                image={project.image.length === 1 ? project.image[0] : project.image[1]}
                 title={project.title}
                 onClick={() => handleProjectClick(project)}
                 opacity={project.opacity}
