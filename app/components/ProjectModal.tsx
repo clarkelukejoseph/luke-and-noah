@@ -57,7 +57,7 @@ export default function ProjectModal({
 
           {/* Modal Content */}
           <motion.div
-            className="relative bg-white rounded-lg max-w-2xl w-full max-sm:w-11/12 max-h-[90vh] overflow-y-auto shadow-2xl"
+            className="relative bg-black/80 rounded-lg max-w-2xl w-full max-sm:w-11/12 max-h-[90vh] overflow-y-auto shadow-2xl"
             initial={{ 
               opacity: 0,
               scale: 0.8,
@@ -166,7 +166,7 @@ export default function ProjectModal({
               }}
               exit={{ opacity: 0, y: 20 }}
             >
-              <div className="text-black">
+              <div className="text-white">
                 <motion.h1 
                   className="text-3xl font-medium mb-2 max-sm:text-2xl"
                   initial={{ opacity: 0, x: -20 }}
@@ -192,7 +192,7 @@ export default function ProjectModal({
                 }}
                 exit={{ opacity: 0, y: 20 }}
               >
-                <p className="text-gray-700 leading-relaxed text-base max-sm:text-sm">
+                <p className="text-gray-300 leading-relaxed text-base max-sm:text-sm">
                   {project.description}
                 </p>
               </motion.div>
@@ -209,8 +209,8 @@ export default function ProjectModal({
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <div className="bg-amber-50 border-l-4 border-amber-400 p-4 rounded-r-lg">
-                    <p className="text-gray-700 leading-relaxed text-base max-sm:text-sm italic">
+                  <div className="bg-amber-900/30 border-l-4 border-amber-400 p-4 rounded-r-lg">
+                    <p className="text-gray-200 leading-relaxed text-base max-sm:text-sm italic">
                       "{project.quotes[0]}"
                     </p>
                   </div>
@@ -228,12 +228,12 @@ export default function ProjectModal({
                 }}
                 exit={{ opacity: 0, y: 20 }}
               >
-                <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">Genre</h2>
+                <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">Genre</h2>
                 <div className="flex flex-wrap gap-2">
                   {project.genre.map((genre, index) => (
                     <motion.span 
                       key={index} 
-                      className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm"
+                      className="px-3 py-1 bg-gray-700 text-gray-200 rounded-full text-sm"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ 
                         opacity: 1, 
@@ -261,7 +261,7 @@ export default function ProjectModal({
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">Cast</h2>
+                  <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">Cast</h2>
                   <div className="flex flex-col gap-2">
                     {project.cast.map((member, index) => (
                       <motion.div 
@@ -277,7 +277,7 @@ export default function ProjectModal({
                       >
                         <span className="text-gray-400 text-sm">{member.name}</span>
                         {member.character && (
-                          <span className="text-gray-700 text-sm"> as {member.character}</span>
+                          <span className="text-gray-300 text-sm"> as {member.character}</span>
                         )}
                       </motion.div>
                     ))}
@@ -297,7 +297,7 @@ export default function ProjectModal({
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">Crew</h2>
+                  <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">Crew</h2>
                   <div className="flex flex-col gap-2">
                     {project.crew.map((member, index) => (
                       <motion.div 
@@ -312,7 +312,7 @@ export default function ProjectModal({
                         exit={{ opacity: 0, x: -20 }}
                       >
                         <span className="text-gray-400 text-sm">{member.name}</span>
-                        <span className="text-gray-700 text-sm">  {member.role.join(", ")}</span>
+                        <span className="text-gray-300 text-sm">  {member.role.join(", ")}</span>
                       </motion.div>
                     ))}
                   </div>
@@ -331,12 +331,12 @@ export default function ProjectModal({
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">Accolades</h2>
+                  <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">Accolades</h2>
                   <div className="flex flex-wrap gap-2">
                     {project.accolades.map((accolade, index) => (
                       <motion.span 
                         key={index} 
-                        className="px-3 py-1 bg-amber-100 text-amber-800 rounded-full text-sm"
+                        className="px-3 py-1 bg-amber-900/50 text-amber-200 rounded-full text-sm"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ 
                           opacity: 1, 
@@ -365,7 +365,7 @@ export default function ProjectModal({
                 >
 
                   {/* change this to just have youtube, the others are supplementary */}
-                  <h2 className="text-xl font-medium mb-3 text-gray-700 max-sm:text-lg">
+                  <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">
                     Project Links:
                   </h2>
                   <div className="flex flex-wrap gap-2">
@@ -385,7 +385,7 @@ export default function ProjectModal({
                         <Link
                           href={platform.link}
                           target="_blank"
-                          className="px-3 py-1 bg-gray-100 text-gray-800 rounded-full text-sm font-medium hover:bg-gray-200 transition-colors duration-70 ease-in-out"
+                          className="px-3 py-1 bg-gray-700 text-gray-200 rounded-full text-sm font-medium hover:bg-gray-600 transition-colors duration-70 ease-in-out"
                         >
                           {platform.name}
                         </Link>

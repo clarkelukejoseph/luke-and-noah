@@ -291,8 +291,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 5,
-    image: ["/images/carrymyPain/posterVertical.jpg", "/images/carrymyPain/screenshot.jpg"],
-    gifLink: "/images/carrymyPain/whoIsIt.mp4",
+    image: ["/images/carryMyPain/posterVertical.jpg", "/images/carryMyPain/screenshot.jpg"],
+    gifLink: "/images/carryMyPain/whoIsIt.mp4",
     title: "Who Is It That Is Going To Carry My Pain? And For Whom?",
     description:
       "In this short parody of classic American soap operas, Williamson discovers that his wife is having an affair with their pastor.",
