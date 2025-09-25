@@ -5,22 +5,22 @@ export default function Home() {
   return (
     <main className="bg-black min-h-screen">
       <div className="relative h-screen w-full overflow-hidden">
-        <iframe
-          src="https://www.youtube.com/embed/PhzWmwT-Vns?si=PZL3bYqdff1B-7xB&autoplay=1&mute=1&controls=0&playsinline=1&loop=1&rel=0&modestbranding=1&enablejsapi=1&iv_load_policy=3&showinfo=0&playlist=PhzWmwT-Vns&fs=0&cc_load_policy=0&disablekb=1"
-          className="absolute inset-0 w-full h-full pointer-events-none"
-          title="Luke and Noah Highlight Reel"
-          style={{ 
-            border: 'none',
-            width: '100vw',
-            height: '100vh',
-            objectFit: 'cover',
-            opacity: 0.7,
-            transform: 'scale(3.9)',
-            transformOrigin: 'center center',
-          }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen
-        />
+          <iframe
+            src="https://www.youtube.com/embed/PhzWmwT-Vns?si=PZL3bYqdff1B-7xB&autoplay=1&mute=1&controls=0&playsinline=1&loop=1&rel=0&modestbranding=1&enablejsapi=1&iv_load_policy=3&showinfo=0&playlist=PhzWmwT-Vns&fs=0&cc_load_policy=0&disablekb=1"
+            className="absolute inset-0 w-full h-full pointer-events-none video-bg"
+            title="Luke and Noah Highlight Reel"
+            style={{ 
+              border: 'none',
+              width: '100vw',
+              height: '100vh',
+              objectFit: 'cover',
+              opacity: 0.7,
+              transform: 'scale(1.2)',
+              transformOrigin: 'center center',
+            }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         {/* Invisible overlay to prevent any interaction */}
         <div className="absolute inset-0 w-full h-full pointer-events-auto" />
         

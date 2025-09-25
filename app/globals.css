@@ -159,3 +159,14 @@ body {
     transform: translateY(0);
   }
 }
+
+/* Responsive video background scaling */
+.video-bg {
+  transform: scale(1.2);
+}
+
+@media (max-width: 640px) {
+  .video-bg {
+    transform: scale(3.9);
+  }
+}
