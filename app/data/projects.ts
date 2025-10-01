@@ -1318,6 +1318,7 @@ const workProjectsData: WorkProject[] = [
     modalPhotos: [
       "/images/roadside/crew.jpg",
       "/images/roadside/actor.JPG",
+      "/images/roadside/ethanAndYami.jpg",
     ],
   },
   {

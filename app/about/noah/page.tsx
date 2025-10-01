@@ -157,7 +157,7 @@ export default function AboutNoah() {
               <div className="flex flex-wrap gap-4 max-sm:flex-col max-sm:w-full">
                 {getNoahProjects().map((project) => (
                   <div key={project.id} className="max-sm:w-full">
-                    <div className="relative w-40 h-60 max-sm:w-full max-sm:h-120 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-70">
+                    <div className="relative w-40 h-60 max-sm:w-full max-sm:h-140 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-70">
                       <div onClick={() => handleProjectClick(project)}>
                         <Image
                           src={project.moviePoster || project.image[0]}
