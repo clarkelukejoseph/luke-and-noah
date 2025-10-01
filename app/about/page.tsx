@@ -19,21 +19,30 @@ export default function AboutPage() {
       <Header />
 
       {/* luke and noah section */}
-      <div className="h-screen flex flex-col luke-noah-section">
-        {/* Banner Image Row */}
-        <div className="h-full flex flex-col gap-10">
+      <div className="h-screen flex flex-col luke-noah-section relative">
+        {/* Background Image */}
+        <div className="absolute inset-0 z-0 h-screen">
+          <Image
+            src="/about/tempBackground.jpg"
+            alt="Background"
+            fill
+            className="object-cover opacity-25"
+            priority
+          />
+          {/* Black gradient overlay - top */}
+          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent h-1/4 top-0"></div>
+          {/* Black gradient overlay - bottom */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent h-1/4 bottom-0"></div>
+        </div>
+        
+        {/* Content */}
+        <div className="relative z-10 h-full flex flex-col gap-10">
           <div className="relative w-full max-sm:px-6 h-5/12 overflow-hidden max-sm:hidden max-sm:mb-8">
-            <Image
-              src="/about/banner.jpg"
-              alt="About banner"
-              fill
-              className="object-cover"
-              priority
-            />
+            {/* Keep the original banner image but make it transparent or remove it */}
           </div>
           {/* Text Row */}
           <div className="h-6/12 max-sm:h-full flex items-center max-sm:items-start max-sm:mt-8">
-            <div className="w-full px-8 max-sm:px-6 pb-24 max-sm:pb-18 text-xl max-sm:text-base gap-1 leading-8">
+            <div className="w-full px-8 max-sm:px-6 text-xl max-sm:text-base gap-1 leading-8">
               <button
                 onClick={() => scrollToSection("luke-section")}
                 className="hover:text-amber-400 transition-all duration-70 inline text-amber-200 cursor-pointer"
