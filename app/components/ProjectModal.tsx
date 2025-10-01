@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -16,6 +16,32 @@ export default function ProjectModal({
   onClose,
   project,
 }: ProjectModalProps) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    if (!isOpen || !project?.gifLink) return;
+    const video = videoRef.current;
+    if (!video) return;
+    // Ensure muted for Chromium autoplay policy
+    video.muted = true;
+    const tryPlay = async () => {
+      try {
+        await video.play();
+      } catch (_) {
+        // no-op: autoplay may still be blocked in extreme cases
+      }
+    };
+    // If metadata not loaded yet, wait for it
+    if (video.readyState < 2) {
+      const onLoaded = () => {
+        tryPlay();
+        video.removeEventListener("loadeddata", onLoaded);
+      };
+      video.addEventListener("loadeddata", onLoaded);
+    } else {
+      tryPlay();
+    }
+  }, [isOpen, project?.gifLink]);
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -37,10 +63,10 @@ export default function ProjectModal({
   return (
     <AnimatePresence>
       {isOpen && project && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
           {/* Backdrop */}
           <motion.div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/80"
             initial={{ opacity: 0, backdropFilter: "blur(0px)" }}
             animate={{ 
               opacity: 1, 
@@ -57,7 +83,7 @@ export default function ProjectModal({
 
           {/* Modal Content */}
           <motion.div
-            className="relative bg-black/80 rounded-lg max-w-2xl w-full max-sm:w-11/12 max-h-[90vh] overflow-y-auto shadow-2xl"
+            className="relative bg-black/100 rounded-lg max-w-2xl w-full max-sm:w-11/12 max-h-[90vh] overflow-y-auto shadow-2xl"
             initial={{ 
               opacity: 0,
               scale: 0.8,
@@ -70,7 +96,7 @@ export default function ProjectModal({
               y: 0,
               rotateX: 0,
               transition: { 
-                duration: 0.5,
+                duration: 0.3,
                 ease: [0.25, 0.46, 0.45, 0.94],
                 type: "spring",
                 stiffness: 300,
@@ -128,31 +154,33 @@ export default function ProjectModal({
               animate={{ 
                 opacity: 1, 
                 y: 0,
-                transition: { delay: 0.1, duration: 0.4 }
+                transition: { delay: 0.1, duration: 0.3 }
               }}
               exit={{ opacity: 0, y: -20 }}
             >
               {project.gifLink ? (
                 <video
+                  key={project.gifLink}
+                  ref={videoRef}
                   autoPlay
                   loop
                   muted
                   playsInline
+                  preload="auto"
                   className="w-full h-full object-cover rounded-t-lg"
-                  poster={project.image[1]}
-                >
-                  <source src={project.gifLink} type="video/mp4" />
-                </video>
+                  poster={project.image[0]}
+                  src={project.gifLink}
+                />
               ) : (
                 <Image
-                  src={project.image[1]}
+                  src={project.image[0]}
                   alt={project.title}
                   fill
                   className="object-cover rounded-t-lg"
                   priority
                 />
               )}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent rounded-t-lg" />
+              <div className="absolute-inset overlay-gradient-top rounded-t-lg pointer-events-none" />
             </motion.div>
 
             {/* Content */}
@@ -162,7 +190,7 @@ export default function ProjectModal({
               animate={{ 
                 opacity: 1, 
                 y: 0,
-                transition: { delay: 0.2, duration: 0.4 }
+                transition: { delay: 0.2, duration: 0.3 }
               }}
               exit={{ opacity: 0, y: 20 }}
             >
@@ -173,7 +201,7 @@ export default function ProjectModal({
                   animate={{ 
                     opacity: 1, 
                     x: 0,
-                    transition: { delay: 0.3, duration: 0.4 }
+                    transition: { delay: 0.3, duration: 0.3 }
                   }}
                   exit={{ opacity: 0, x: -20 }}
                 >
@@ -188,7 +216,7 @@ export default function ProjectModal({
                 animate={{ 
                   opacity: 1, 
                   y: 0,
-                  transition: { delay: 0.4, duration: 0.4 }
+                  transition: { delay: 0.4, duration: 0.3 }
                 }}
                 exit={{ opacity: 0, y: 20 }}
               >
@@ -205,7 +233,7 @@ export default function ProjectModal({
                   animate={{ 
                     opacity: 1, 
                     y: 0,
-                    transition: { delay: 0.5, duration: 0.4 }
+                    transition: { delay: 0.5, duration: 0.3 }
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
@@ -224,21 +252,21 @@ export default function ProjectModal({
                 animate={{ 
                   opacity: 1, 
                   y: 0,
-                  transition: { delay: 0.6, duration: 0.4 }
+                  transition: { delay: 0.6, duration: 0.3 }
                 }}
                 exit={{ opacity: 0, y: 20 }}
               >
-                <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">Genre</h2>
+                <h2 className="section-title">Genre</h2>
                 <div className="flex flex-wrap gap-2">
                   {project.genre.map((genre, index) => (
                     <motion.span 
                       key={index} 
-                      className="px-3 py-1 bg-gray-700 text-gray-200 rounded-full text-sm"
+                      className="chip-gray"
                       initial={{ opacity: 0, scale: 0.8 }}
                       animate={{ 
                         opacity: 1, 
                         scale: 1,
-                        transition: { delay: 0.6 + index * 0.1, duration: 0.3 }
+                        transition: { delay: 0.6 + index * 0.1, duration: 0.2 }
                       }}
                       exit={{ opacity: 0, scale: 0.8 }}
                       whileHover={{ scale: 1.05 }}
@@ -257,11 +285,11 @@ export default function ProjectModal({
                   animate={{ 
                     opacity: 1, 
                     y: 0,
-                    transition: { delay: 0.7, duration: 0.4 }
+                    transition: { delay: 0.7, duration: 0.3 }
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">Cast</h2>
+                <h2 className="section-title">Cast</h2>
                   <div className="flex flex-col gap-2">
                     {project.cast.map((member, index) => (
                       <motion.div 
@@ -271,7 +299,7 @@ export default function ProjectModal({
                         animate={{ 
                           opacity: 1, 
                           x: 0,
-                          transition: { delay: 0.7 + index * 0.1, duration: 0.3 }
+                          transition: { delay: 0.7 + index * 0.1, duration: 0.2 }
                         }}
                         exit={{ opacity: 0, x: -20 }}
                       >
@@ -293,11 +321,11 @@ export default function ProjectModal({
                   animate={{ 
                     opacity: 1, 
                     y: 0,
-                    transition: { delay: 0.9, duration: 0.4 }
+                    transition: { delay: 0.9, duration: 0.3 }
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">Crew</h2>
+                <h2 className="section-title">Crew</h2>
                   <div className="flex flex-col gap-2">
                     {project.crew.map((member, index) => (
                       <motion.div 
@@ -307,7 +335,7 @@ export default function ProjectModal({
                         animate={{ 
                           opacity: 1, 
                           x: 0,
-                          transition: { delay: 0.9 + index * 0.1, duration: 0.3 }
+                          transition: { delay: 0.9 + index * 0.1, duration: 0.2 }
                         }}
                         exit={{ opacity: 0, x: -20 }}
                       >
@@ -327,21 +355,21 @@ export default function ProjectModal({
                   animate={{ 
                     opacity: 1, 
                     y: 0,
-                    transition: { delay: 1.0, duration: 0.4 }
+                    transition: { delay: 1.0, duration: 0.3 }
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
-                  <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">Accolades</h2>
+                <h2 className="section-title">Accolades</h2>
                   <div className="flex flex-wrap gap-2">
                     {project.accolades.map((accolade, index) => (
                       <motion.span 
                         key={index} 
-                        className="px-3 py-1 bg-amber-900/50 text-amber-200 rounded-full text-sm"
+                      className="chip-amber"
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ 
                           opacity: 1, 
                           scale: 1,
-                          transition: { delay: 1.0 + index * 0.1, duration: 0.3 }
+                              transition: { delay: 1.0 + index * 0.1, duration: 0.2 }
                         }}
                       >
                         {accolade}
@@ -359,13 +387,13 @@ export default function ProjectModal({
                   animate={{ 
                     opacity: 1, 
                     y: 0,
-                    transition: { delay: 1.2, duration: 0.4 }
+                    transition: { delay: 1.2, duration: 0.3 }
                   }}
                   exit={{ opacity: 0, y: 20 }}
                 >
 
                   {/* change this to just have youtube, the others are supplementary */}
-                  <h2 className="text-xl font-medium mb-3 text-gray-200 max-sm:text-lg">
+                <h2 className="section-title mb-2">
                     Project Links:
                   </h2>
                   <div className="flex flex-wrap gap-2">
@@ -376,7 +404,7 @@ export default function ProjectModal({
                         animate={{ 
                           opacity: 1, 
                           scale: 1,
-                          transition: { delay: 1.3 + index * 0.1, duration: 0.3 }
+                          transition: { delay: 1.3 + index * 0.1, duration: 0.2 }
                         }}
                         exit={{ opacity: 0, scale: 0.8 }}
                         whileHover={{ scale: 1.05 }}
@@ -391,6 +419,50 @@ export default function ProjectModal({
                         </Link>
                       </motion.div>
                     ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {/* Photography strip - only for Photography grouped projects */}
+              {project.groupings?.some(g => g.group.includes("Photography")) && (
+                <motion.div 
+                  className="mt-8"
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0, transition: { duration: 0.25 } }}
+                  exit={{ opacity: 0, y: 10 }}
+                >
+                  <h3 className="text-lg font-medium mb-3 text-gray-200 max-sm:text-base">Photos</h3>
+                  <div className="relative">
+                    <div
+                      className="flex gap-3 overflow-x-auto scrollbar-hide px-1 py-2"
+                      style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}
+                      onWheel={(e) => {
+                        e.preventDefault();
+                        const container = e.currentTarget as HTMLDivElement;
+                        container.scrollLeft += e.deltaY;
+                      }}
+                      onMouseEnter={() => {
+                        if (typeof document !== 'undefined') document.body.style.overflow = 'hidden';
+                      }}
+                      onMouseLeave={() => {
+                        if (typeof document !== 'undefined') document.body.style.overflow = '';
+                      }}
+                      onTouchStart={() => {
+                        if (typeof document !== 'undefined') document.body.style.overflow = 'hidden';
+                      }}
+                      onTouchEnd={() => {
+                        if (typeof document !== 'undefined') document.body.style.overflow = '';
+                      }}
+                    >
+                      {(project.modalPhotos ?? []).map((src, idx) => (
+                        <div key={idx} className="relative h-32 w-48 min-w-48 max-sm:h-28 max-sm:w-44 overflow-hidden bg-gray-800/40">
+                          <Image src={src} alt={`photo ${idx + 1}`} fill className="object-cover" />
+                        </div>
+                      ))}
+                    </div>
+                    {/* Edge gradients */}
+                    <div className="pointer-events-none absolute top-0 left-0 w-8 h-full bg-gradient-to-r from-black/80 to-transparent" />
+                    <div className="pointer-events-none absolute top-0 right-0 w-8 h-full bg-gradient-to-l from-black/80 to-transparent" />
                   </div>
                 </motion.div>
               )}

@@ -15,7 +15,7 @@ export default function ThumbnailCard({ href, title, subtitle, image, className 
       <div className="relative h-full overflow-hidden transition-all duration-300 hover:scale-[1.02]">
         {/* background image */}
         {image && (
-          <div className="absolute inset-0">
+          <div className="absolute-inset">
             <Image
               src={image}
               alt={title}
@@ -27,10 +27,10 @@ export default function ThumbnailCard({ href, title, subtitle, image, className 
         )}
         
         {/* dark overlay */}
-        <div className={`absolute inset-0 ${image ? 'bg-black/60' : 'bg-gradient-to-br from-gray-800/40 to-gray-900/40'}`}></div>
+        <div className={`absolute-inset ${image ? 'bg-black/60' : 'bg-gradient-to-br from-gray-800/40 to-gray-900/40'}`}></div>
         
         {/* backdrop blur */}
-        <div className="absolute inset-0 backdrop-blur-sm"></div>
+        <div className="absolute-inset backdrop-blur-sm"></div>
         
         {/* content */}
         <div className="relative z-10 h-full flex flex-col justify-center items-center p-12 text-center">

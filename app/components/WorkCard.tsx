@@ -26,7 +26,7 @@ export default function WorkCard({ image, title, className = "", onClick, opacit
         />
         {comingSoon && (
           <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-            <div className="px-4 py-2 bg-black/50 border border-white/60 rounded-full backdrop-blur-sm">
+            <div className="px-4 py-2 rounded-full bg-black/50 border border-white/60 backdrop-blur-sm">
               <span className="text-white text-lg tracking-wider uppercase">Coming Soon</span>
             </div>
           </div>

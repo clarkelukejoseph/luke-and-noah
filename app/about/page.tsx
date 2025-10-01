@@ -1,9 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import Header from "../components/Header";
 import LukeSection from "./luke/page";
 import NoahSection from "./noah/page";
+import Footer from "../components/Footer";
 
 export default function AboutPage() {
   const scrollToSection = (sectionId: string) => {
@@ -17,8 +19,20 @@ export default function AboutPage() {
       <Header />
 
       {/* luke and noah section */}
-      <div className="h-screen flex items-end luke-noah-section">
-        <div className="w-full px-16 max-sm:px-6 pb-36 max-sm:pb-8 text-3xl max-sm:text-base gap-1 leading-10">
+      <div className="h-screen flex flex-col luke-noah-section gap-18">
+        {/* Banner Image Row */}
+        <div className="relative w-full px-16 max-sm:px-6 h-6/12 overflow-hidden">
+          <Image
+            src="/about/banner.jpg"
+            alt="About banner"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        {/* Text Row */}
+        <div className="h-6/12 flex items-end">
+          <div className="w-full px-16 max-sm:px-6 pb-32 max-sm:pb-8 text-2xl max-sm:text-base gap-1 leading-10">
         <button
           onClick={() => scrollToSection('luke-section')}
           className="hover:text-amber-400 transition-all duration-70 inline text-amber-200 cursor-pointer"
@@ -47,6 +61,7 @@ export default function AboutPage() {
         independently and together. <br/><br/>Explore their work{" "}
         <Link href="/work" className="hover:text-amber-400 transition-all duration-70 ease-in-out inline text-amber-200">here</Link> or contact them{" "}
         <Link href="/contact" className="hover:text-amber-400 transition-all duration-70 ease-in-out inline text-amber-200">here</Link>.
+          </div>
         </div>
       </div>
 
@@ -59,6 +74,7 @@ export default function AboutPage() {
       <div id="noah-section">
         <NoahSection />
       </div>
+      <Footer />
     </main>
   );
 }

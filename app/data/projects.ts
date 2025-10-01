@@ -5,6 +5,7 @@ export interface WorkProject {
   description: string;
   genre: string[];
   releaseYear: number;
+  moviePoster?: string;
   cast: { name: string; character: string }[];
   crew: { name: string; role: string[] }[];
   links: { name: string; link: string }[];
@@ -15,28 +16,19 @@ export interface WorkProject {
   noahWork?: boolean;
   comingSoon?: boolean;
   gifLink?: string;
+  modalPhotos?: string[];
 }
-// first image in image array is the poster image
 
-// order of projects that should be near the top
-// Yell Occult - Mr. Toad’s Wild Ride (Official Music Video)
-// Untitled Documentary short on Tusheti, Georgia
-// Chet Larson
-// Chet Larson Coda
-// Convenience
-// The Small Victorian Boy
-// Who Is It That is Going to Carry My Pain? And For Whom?
-// President TV of The United States - Did (Official Music Video)
-// The Energy Solution - The End of 2010 (Official Music Video)
-// The Energy Solution - Talk to Me (Official Music Video)
+// first image in the image array is the horizonal image
 
-export const workProjects: WorkProject[] = [
+const workProjectsData: WorkProject[] = [
   {
     id: 1,
     image: [
-      "/images/moviePosters/chetLarson.jpeg",
       "/images/chetLarson/screenshot.jpeg",
     ],
+    moviePoster: "/images/chetLarson/chetLarson.jpeg",
+    gifLink: "/images/chetLarson/larsonGif.mp4",
     title: "Chet Larson",
     description:
       "Chet Larson is a former internet personality and content creator best known for his inflammatory presence across numerous platforms, ranging from comments on instagram to vlogs on youtube. His stature grew throughout 2017 and into 2018, when it seemed like he was destined to truly blow. However, one earth shattering incident sent him spiraling and forced him completely offline. This video, captured two years later in the Summer of 2020, was intended to merely document his turbulent past. As filming progressed, though, it became clear that he was using this as an opportunity to stage an impulsive comeback. The events that transpired in the wake of his new posts would alter his life forever.",
@@ -101,66 +93,9 @@ export const workProjects: WorkProject[] = [
     ],
   },
   {
-    id: 2,
-    image: ["/images/moviePosters/chetLarsonCodaVertical.jpg", "/images/moviePosters/chetLarsonCoda.jpg"],
-    title: "Chet Larson Coda",
-    description:
-      "Following the moderate success of the eponymous documentary made about him, former internet personality and content creator Chet Larson decides to direct the films direct sequel with the help of the originals director, Ernie Jackson. However, as filming progresses, Ernie realizes that he and Chet's personalities are too contrasting for this artistic partnership to continue flourishing.",
-    genre: ["Mockumentary", "Comedy", "Coming of Age"],
-    lukeWork: true,
-    noahWork: true,
-    releaseYear: 2022,
-    cast: [
-      { name: "Luke or Noah Clarke", character: "Chet Larson" },
-      { name: "Julianna Gibbons", character: "The Figure" },
-      { name: "Sam Kanda", character: "Ernie Jackson" },
-      { name: "Konstantine Kahadze", character: "Konstantine" },
-      { name: "Edwin Michael Sheriff", character: "Sergei" },
-      { name: "Sam Herath", character: "Kaleb" },
-      { name: "Joey Cocci", character: "Gary Nealon" },
-      { name: "Osquinn", character: "Herself" },
-      { name: "Michael Scherer", character: "Mr. Young" },
-      { name: "Violet Barnhart", character: "Alex" },
-    ],
-    crew: [
-      { name: "Luke & Noah Clarke", role: ["Writer", "Director", "Editor"] },
-      { name: "Noah Clarke", role: ["Producer"] },
-      { name: "Julianna Gibbons", role: ["Storyboards"] },
-      { name: "Zoe Davidson", role: ["Assistant Camera Operators"] },
-      { name: "Tuesday Kalota", role: ["Assistant Camera Operators"] },
-      { name: "Eve Orellena", role: ["Assistant Camera Operators"] },
-      { name: "Sam Ingram", role: ["Production Assistant"] },
-      { name: "Kayla Shomar-Corbett", role: ["Post Production Sound Mixing"] },
-      { name: "Hugh Turner", role: ["Best Boy"] },
-    ],
-    links: [
-      {
-        name: "Youtube",
-        link: "https://youtu.be/pJZMi_rg00g?si=LOaxcGby5rirDYhx",
-      },
-      {
-        name: "Letterboxd",
-        link: "https://letterboxd.com/film/chet-larson-coda/",
-      },
-      {
-        name: "Rateyourmusic",
-        link: "https://rateyourmusic.com/film/chet-larson-2/",
-      },
-    ],
-    groupings: [
-      {
-        name: "Luke",
-        group: ["Directing", "Writing", "Editing", "Cinematography"],
-      },
-      {
-        name: "Noah",
-        group: ["Directing", "Producing", "Writing", "Editing", "Acting"],
-      },
-    ],
-  },
-  {
     id: 3,
-    image: ["/images/moviePosters/convenienceVertical.jpg", "/images/moviePosters/convenience.jpg"],
+    image: ["/images/convenience/convenience.jpg"],
+    moviePoster: "/images/convenience/convenienceVertical.jpg",
     gifLink: "/images/convenience/convenience.mp4",
     title: "Convenience",
     lukeWork: true,
@@ -217,12 +152,72 @@ export const workProjects: WorkProject[] = [
     ],
   },
   {
+    id: 2,
+    image: ["/images/chetLarson/coda/chetLarsonCoda.jpg"],
+    moviePoster: "/images/chetLarson/coda/chetLarsonCodaVertical.jpg",
+    gifLink: "/images/chetLarson/coda/codaGif.mp4",
+    title: "Chet Larson Coda",
+    description:
+      "Following the moderate success of the eponymous documentary made about him, former internet personality and content creator Chet Larson decides to direct the films direct sequel with the help of the originals director, Ernie Jackson. However, as filming progresses, Ernie realizes that he and Chet's personalities are too contrasting for this artistic partnership to continue flourishing.",
+    genre: ["Mockumentary", "Comedy", "Coming of Age"],
+    lukeWork: true,
+    noahWork: true,
+    releaseYear: 2022,
+    cast: [
+      { name: "Luke or Noah Clarke", character: "Chet Larson" },
+      { name: "Julianna Gibbons", character: "The Figure" },
+      { name: "Sam Kanda", character: "Ernie Jackson" },
+      { name: "Konstantine Kahadze", character: "Konstantine" },
+      { name: "Edwin Michael Sheriff", character: "Sergei" },
+      { name: "Sam Herath", character: "Kaleb" },
+      { name: "Joey Cocci", character: "Gary Nealon" },
+      { name: "Osquinn", character: "Herself" },
+      { name: "Michael Scherer", character: "Mr. Young" },
+      { name: "Violet Barnhart", character: "Alex" },
+    ],
+    crew: [
+      { name: "Luke & Noah Clarke", role: ["Writer", "Director", "Editor"] },
+      { name: "Noah Clarke", role: ["Producer"] },
+      { name: "Julianna Gibbons", role: ["Storyboards"] },
+      { name: "Zoe Davidson", role: ["Assistant Camera Operators"] },
+      { name: "Tuesday Kalota", role: ["Assistant Camera Operators"] },
+      { name: "Eve Orellena", role: ["Assistant Camera Operators"] },
+      { name: "Sam Ingram", role: ["Production Assistant"] },
+      { name: "Kayla Shomar-Corbett", role: ["Post Production Sound Mixing"] },
+      { name: "Hugh Turner", role: ["Best Boy"] },
+    ],
+    links: [
+      {
+        name: "Youtube",
+        link: "https://youtu.be/pJZMi_rg00g?si=LOaxcGby5rirDYhx",
+      },
+      {
+        name: "Letterboxd",
+        link: "https://letterboxd.com/film/chet-larson-coda/",
+      },
+      {
+        name: "Rateyourmusic",
+        link: "https://rateyourmusic.com/film/chet-larson-2/",
+      },
+    ],
+    groupings: [
+      {
+        name: "Luke",
+        group: ["Directing", "Writing", "Editing", "Cinematography"],
+      },
+      {
+        name: "Noah",
+        group: ["Directing", "Producing", "Writing", "Editing", "Acting"],
+      },
+    ],
+  },
+  
+  {
     id: 4,
     image: [
-      "/images/victorianBoy/victorianBoyVertical.jpg",
-      "/images/victorianBoy/screenshot.png",
-      "/images/moviePosters/victorianBoy.jpg",
+      "/images/victorianBoy/smallVictorianBoy.png",
     ],
+    moviePoster: "/images/victorianBoy/victorianBoyVertical.jpg",
     gifLink: "/images/victorianBoy/victorianBoy.mp4",
     title: "The Small Victorian Boy",
     description:
@@ -291,7 +286,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 5,
-    image: ["/images/carryMyPain/posterVertical.jpg", "/images/carryMyPain/screenshot.jpg"],
+    image: ["/images/carryMyPain/screenshot.jpg"],
+    moviePoster: "/images/carryMyPain/posterVertical.jpg",
     gifLink: "/images/carryMyPain/whoIsIt.mp4",
     title: "Who Is It That Is Going To Carry My Pain? And For Whom?",
     description:
@@ -340,7 +336,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 6,
-    image: ["/images/presidentTV/posterVertical.jpg", "/images/presidentTV/screenshot.jpeg"],
+    image: ["/images/presidentTV/screenshot.jpeg"],
+    moviePoster: "/images/presidentTV/posterVertical.jpg",
     gifLink: "/images/presidentTV/presidentTVGif.mp4",
     title: "President TV of The United States - Did (Official Music Video)",
     description:
@@ -391,7 +388,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 7,
-    image: ["/images/energySolution/2010Vertical.jpg", "/images/energySolution/2010_screenshot.jpg"],
+    image: ["/images/energySolution/2010_screenshot.jpg"],
+    moviePoster: "/images/energySolution/2010Vertical.jpg",
     gifLink: "/images/energySolution/endOf2010.mp4",
     title: "The Energy Solution - The End of 2010 (Official Music Video)",
     description:
@@ -444,7 +442,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 8,
-    image: ["/images/energySolution/talkToMeVertical.jpg", "/images/energySolution/talkToMe.png"],
+    image: ["/images/energySolution/talkToMeHorizontal.png"],
+    moviePoster: "/images/energySolution/talkToMeVertical.jpg",
     gifLink: "/images/energySolution/talkToMe.mp4",
     title: "The Energy Solution - Talk to Me (Official Music Video)",
     description:
@@ -490,7 +489,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 47,
-    image: ["/images/yellOccult/screenshot.png"],
+    image: ["/images/yellOccult/toadHorizontal.png"],
     title: "Yell Occult - Mr. Toad's Wild Ride (Music Video)",
     gifLink: "/images/yellOccult/toadGif.mp4",
     description:
@@ -509,11 +508,15 @@ export const workProjects: WorkProject[] = [
         name: "Luke & Noah Clarke",
         role: ["Director", "Editor", "Cinematographer"],
       },
-      { name: "Luke Clarke", role: ["Producer"] },
+      { name: "Luke Clarke", role: ["Producer", "Stop Motion Animator"] },
+      { name: "Lilith Videt Weeks", role: ["Analog Visual Synthesizer"] },
+      { name: "Isaac Lucy", role: ["Visual Effects Supervisor"] },
+      { name: "Arianna Ganley", role: ["Stop Motion Animator"] },
       { name: "Julianna Gibbons", role: ["Key Grip"] },
       { name: "Samuel Ingram", role: ["Key Grip"] },
       { name: "Elena Brace", role: ["Production Assistant"] },
       { name: "Abbie Greene", role: ["Production Assistant"] },
+      { name: "Evelyn Orellana", role: ["Driver"] },
       { name: "Yamile Abuid", role: ["Additional Photography"] },
     ],
     links: [],
@@ -536,7 +539,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 49,
-    image: ["/images/tsovaTushDocu/screenshot.jpg"],
+    image: ["/images/tsovaTushDocu/tsovaTushHorizontal.png"],
     gifLink: "/images/tsovaTushDocu/georgiaDoc.mp4",
     title: "Untitled Documentary Short (Tsova-Tush community)",
     description:
@@ -565,8 +568,7 @@ export const workProjects: WorkProject[] = [
   {
     id: 9,
     image: [
-      "/images/wvfs2024/nabihahCover.jpeg",
-      "/images/wvfs2024/nabihah.jpeg",
+      "/images/wvfs2024/iqbalHorizontal.jpeg",
     ],
     title: "Nabihah Iqbal Interview | WVFS at SXSW 2024",
     description:
@@ -601,10 +603,7 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 10,
-    image: [
-      "/images/wvfs2024/ellieBleachCover.png",
-      "/images/wvfs2024/ellieBleach.jpeg",
-    ],
+    image: ["/images/wvfs2024/bleachHorizontal.jpeg"],
     title: "Ellie Bleach Interview | WVFS at SXSW 2024",
     description:
       "In the third interview conducted by the staff of the WVFS radio station at the 2024 SXSW festival in Austin Texas, interviewer Arman Rezaian talks with British singer and songwriter Ellie Bleach. This interview was shot by Luke, who edited this installment alongside Noah.",
@@ -1035,7 +1034,8 @@ export const workProjects: WorkProject[] = [
   },
   {
     id: 25,
-    image: ["/images/hairlessDog/hairlessDogVertical.jpg", "/images/hairlessDog/screenshot.jpg"],
+    image: ["/images/hairlessDog/hairlessDogHorizontal.png"],
+    moviePoster: "/images/hairlessDog/hairlessDogVertical.jpg",
     title: "Hairless Dog",
     description:
       "In this 2023 black and white dramedy short by writer and director Tommy Adzema, Noah plays Ian alongside Sara Gonzalez as Lucy.",
@@ -1239,10 +1239,16 @@ export const workProjects: WorkProject[] = [
       { name: "Luke", group: ["Photography"] },
       { name: "Noah", group: ["Photography"] },
     ],
+    modalPhotos: [
+      "/images/toro/modalPhotos/001.jpg",
+      "/images/toro/modalPhotos/002.jpg",
+      "/images/toro/modalPhotos/003.jpg",
+    ],
   },
   {
     id: 31,
-    image: ["/images/mountains/mountainsVertical.jpg", "/images/mountains/screenshot.jpg"],
+    image: ["/images/mountains/screenshot.jpg"],
+    moviePoster: "/images/mountains/mountainsVertical.jpg",
     title: "Mountains",
     description:
       "An abstract portrayal of mountains created, shot, and edited by Luke",
@@ -1258,10 +1264,16 @@ export const workProjects: WorkProject[] = [
       },
     ],
     groupings: [{ name: "Luke", group: ["Photography"] }],
+    modalPhotos: [
+      "/images/mountains/modalPhotos/m1.jpg",
+      "/images/mountains/modalPhotos/m2.jpg",
+      "/images/mountains/modalPhotos/m3.jpg",
+    ],
   },
   {
     id: 32,
-    image: ["/images/artificeCD/artificeVertical.jpeg", "/images/artificeCD/cd_3.jpeg", "/images/artificeCD/cd_7.jpeg"],
+    image: ["/images/artificeCD/artificeHorizontal.png"],
+    moviePoster: "/images/artificeCD/artificeVertical.jpeg",
     title: "Artifice CD Art Direction",
     description:
       "Cover Art, CD design, and general art direction for the release of the Ambient Electronic EP Artifice by Virginia based musician Perky. The art was designed to reflect the seasonal themes and soothing tones of the works 4 songs.",
@@ -1285,6 +1297,11 @@ export const workProjects: WorkProject[] = [
       { name: "Luke", group: ["Photography", "Music"] },
       { name: "Noah", group: ["Photography", "Music"] },
     ],
+    modalPhotos: [
+      "/images/artificeCD/modalPhotos/p1.jpg",
+      "/images/artificeCD/modalPhotos/p2.jpg",
+      "/images/artificeCD/modalPhotos/p3.jpg",
+    ],
   },
   {
     id: 33,
@@ -1298,6 +1315,10 @@ export const workProjects: WorkProject[] = [
     crew: [],
     links: [],
     groupings: [{ name: "Luke", group: ["Photography"] }],
+    modalPhotos: [
+      "/images/roadside/crew.jpg",
+      "/images/roadside/actor.JPG",
+    ],
   },
   {
     id: 34,
@@ -1665,7 +1686,6 @@ export const workProjects: WorkProject[] = [
       },
     ],
   },
-  
   {
     id: 50,
     image: ["/images/wvfsDocu/screenshot.jpg"],
@@ -1686,11 +1706,70 @@ export const workProjects: WorkProject[] = [
     ],
     links: [],
     groupings: [
-      { name: "Luke", group: ["Directing", "Producing", "Editing", "Cinematography"] },
-      { name: "Noah", group: ["Directing", "Editing"] },
+      { name: "Luke", group: ["Directing", "Producing", "Editing", "Cinematography", "Documentary"] },
+      { name: "Noah", group: ["Directing", "Editing", "Documentary"] },
     ],
   },
 ];
+
+// Explicit order reflecting the requested listing (by existing ids)
+const ORDER_BY_ID: number[] = [
+  1, // Chet Larson
+  3, // Convenience
+  4, // The Small Victorian Boy
+  2, // Chet Larson Coda
+  5, // Who Is It That Is Going To Carry My Pain? And For Whom?
+  6, // President TV of The United States - Did (Official Music Video)
+  8, // The Energy Solution - Talk to Me (Official Music Video)
+  7, // The Energy Solution - The End of 2010 (Official Music Video)
+  47, // Yell Occult - Mr. Toad's Wild Ride (Music Video)
+  49, // Untitled Documentary Short (Tsova-Tush community)
+  32, // Artifice CD Art Direction
+  15, // FSU Club Softball Feature
+  20, // Chet Larson - Introduction feat. osquinn
+  11, // Mali Velasquez Interview | WVFS at SXSW 2024
+  50, // Untitled Documentary Short (WVFS Radio Station)
+  48, // Big Scruff - Remind EP (Music Video)
+  13, // FSU Campus Tours Featurette
+  46, // Let's Talk Moco: Visarts Center
+  12, // Friko Interview | WVFS at SXSW 2024
+  25, // Hairless Dog
+  16, // South of Soho Featurette
+  24, // Atom Bomb
+  9, // Nabihah Iqbal Interview | WVFS at SXSW 2024
+  21, // Three Torches: Spring Episode 3
+  10, // Ellie Bleach Interview | WVFS at SXSW 2024
+  23, // ...In with the New
+  14, // FSU Mentor Transfer Program Featurette
+  17, // Marching Chiefs News Featurette
+  18, // FSU Gaming Committee News Featurette
+  19, // Gramps: The Movie - 10 Year Anniversary Commentary
+  22, // A Ghost at a Costume Party
+  26, // Okay, Who Killed George?
+  27, // The Fears We Can't Escape
+  28, // The Rumor of Real Things | STITCH Runway | SS24
+  29, // Seminole Scoop Episodes 24-34
+  30, // Toro Portuguese Photoshoot
+  31, // Mountains
+  33, // Roadside BTS Photography
+  34, // So Much
+  36, // Chet Larson (Original Motion Picture Soundtrack)
+  37, // Songs That Don't Get the Crowd Goin
+  38, // Songs That Get the Crowd Goin
+  39, // Teachers Playing Minecraft: Episode 1
+  40, // Teachers Playing Minecraft: Episode 2
+  41, // Teachers Playing Minecraft: Episode 3
+  42, // 2019 Cougar Cub Graduation
+  43, // Cougar Cubs Spooktacular
+  44, // Cougar Cubs Thankstacular
+  45, // Cougar Cubs Wintacular
+];
+
+// Export: sorted by ORDER_BY_ID and with ids remapped to the 1-based index
+export const workProjects: WorkProject[] = ORDER_BY_ID
+  .map((id) => workProjectsData.find((p) => p.id === id))
+  .filter((p): p is WorkProject => Boolean(p))
+  .map((project, index) => ({ ...project, id: index + 1 }));
 
 // Function to get project by grid index
 export function getProjectByGridIndex(gridIndex: number): WorkProject | null {

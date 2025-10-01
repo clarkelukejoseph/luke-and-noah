@@ -2,6 +2,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Header from "../components/Header";
+import Footer from "../components/Footer";
 import WorkCard from "../components/WorkCard";
 import ProjectModal from "../components/ProjectModal";
 import { workProjects, WorkProject } from "../data/projects";
@@ -9,8 +10,9 @@ import { workProjects, WorkProject } from "../data/projects";
 // Extended project type with opacity for filtering
 type ProjectWithOpacity = WorkProject & { opacity: number };
 
-// Define the filter categories
+// Define the filter categories (include "All" as first option)
 const FILTER_CATEGORIES = [
+  "All",
   "Directing",
   "Writing", 
   "Producing",
@@ -57,6 +59,10 @@ export default function WorkPage() {
   }, [selectedFilters]);
 
   const handleFilterClick = (filter: string) => {
+    if (filter === "All") {
+      setSelectedFilters([]); // Clear all filters
+      return;
+    }
     setSelectedFilters(prev => {
       if (prev.includes(filter)) {
         return prev.filter(f => f !== filter);
@@ -84,7 +90,7 @@ export default function WorkPage() {
               <div className="relative overflow-hidden rounded-full bg-black/70 backdrop-blur-md max-w-[500px] max-sm:max-w-[400px]">
                 {/* Scrollable Filter Container - Shows 3 filters but allows scrolling */}
                 <div 
-                  className="flex items-center px-2 py-2 overflow-x-auto scrollbar-hide"
+                  className="flex items-center px-2 py-2 overflow-x-auto scrollbar-hide overscroll-contain touch-pan-x"
                   style={{
                     scrollbarWidth: 'none',
                     msOverflowStyle: 'none'
@@ -94,25 +100,13 @@ export default function WorkPage() {
                     const container = e.currentTarget;
                     container.scrollLeft += e.deltaY;
                   }}
-                  onMouseEnter={() => {
-                    if (typeof document !== 'undefined') document.body.style.overflow = 'hidden';
-                  }}
-                  onMouseLeave={() => {
-                    if (typeof document !== 'undefined') document.body.style.overflow = '';
-                  }}
-                  onTouchStart={() => {
-                    if (typeof document !== 'undefined') document.body.style.overflow = 'hidden';
-                  }}
-                  onTouchEnd={() => {
-                    if (typeof document !== 'undefined') document.body.style.overflow = '';
-                  }}
                 >
                   {FILTER_CATEGORIES.map((filter, index) => (
                     <button
                       key={filter}
                       onClick={() => handleFilterClick(filter)}
                       className={`whitespace-nowrap text-xl max-sm:text-lg font-normal tracking-wide transition-all duration-70 ease-linear text-center rounded-full px-8 py-2 ${
-                        selectedFilters.includes(filter)
+                        (filter === "All" && selectedFilters.length === 0) || selectedFilters.includes(filter)
                           ? "text-amber-400 bg-white/10"
                           : "text-white hover:text-amber-400"
                       }`}
@@ -134,7 +128,7 @@ export default function WorkPage() {
             {filteredProjects.map((project) => (
               <WorkCard
                 key={project.id}
-                image={project.image.length >= 2 ? project.image[1] : project.image[0]}
+                image={project.image[0]}
                 title={project.title}
                 onClick={() => handleProjectClick(project)}
                 opacity={project.opacity}
@@ -150,6 +144,8 @@ export default function WorkPage() {
         onClose={() => setIsModalOpen(false)}
         project={selectedProject}
       />
+
+      <Footer />
     </main>
   );
 }
