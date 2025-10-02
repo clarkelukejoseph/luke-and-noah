@@ -217,7 +217,7 @@ export default function AboutLuke() {
                           src={project.moviePoster || project.image[0]}
                           alt={project.title}
                           fill
-                          className="object-fill"
+                          className="object-cover"
                         />
                       </div>
                     </div>

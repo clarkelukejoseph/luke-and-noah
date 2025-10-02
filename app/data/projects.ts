@@ -496,6 +496,7 @@ const workProjectsData: WorkProject[] = [
       "In this music video for experimental rock and electronic group Yell Occult, the band is drawn into a wild ride at the hands of a strange entity as they attempt to flee the desolate waste of Florida for greener pastures up North.",
     genre: ["Music Video", "Horror", "Art-House", "Experimental"],
     releaseYear: 2025,
+    lukeWork: true,
     comingSoon: true,
     cast: [
       { name: "Lilith Videt Weeks", character: "Herself" },
@@ -762,13 +763,14 @@ const workProjectsData: WorkProject[] = [
   {
     id: 15,
     image: [
-      "/images/fsu/softball/screenshotOne.png",
-      "/images/fsu/softball/screenshotTwo.png",
+      "/images/fsu/softball/softballHorizontal.jpg",
+     
     ],
     title: "FSU Club Softball Feature",
     description:
       "This news featurette written by reporter Maddy Branning highlights FSU's club softball program.",
     genre: ["News Featurette"],
+    lukeWork: true,
     releaseYear: 2023,
     cast: [],
     crew: [
@@ -1635,6 +1637,7 @@ const workProjectsData: WorkProject[] = [
     description:
       "A news featurette created as a part of the Montgomery Community Media Television Series Let’s Talk Moco. This short documentary segment chronicles the Visarts community center located in the heart of downtown Rockville, Maryland. This segment would go on to win Luke and Noah the award for best student production at MCM’s in house 2019 Monty awards.",
     genre: ["Documentary", "News Featurette"],
+    lukeWork: true,
     releaseYear: 2019,
     accolades: ["Monty Award Winner - Best Student Production (2019)"],
     cast: [],

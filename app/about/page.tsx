@@ -15,13 +15,13 @@ export default function AboutPage() {
     }
   };
   return (
-    <main className="w-full">
+    <main className="w-full bg-black">
       <Header />
 
       {/* luke and noah section */}
       <div className="h-screen flex flex-col luke-noah-section relative">
         {/* Background Image */}
-        <div className="absolute inset-0 z-0 h-screen">
+        <div className="absolute inset-0 z-0">
           <Image
             src="/about/tempBackground.jpg"
             alt="Background"
@@ -30,19 +30,16 @@ export default function AboutPage() {
             priority
           />
           {/* Black gradient overlay - top */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent h-1/4 top-0"></div>
+          <div className="pointer-events-none absolute left-0 right-0 top-0 h-1/6 bg-gradient-to-b from-black to-transparent"></div>
           {/* Black gradient overlay - bottom */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent h-1/4 bottom-0"></div>
+          <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-1/3 max-sm:h-1/6 bg-gradient-to-t from-black to-transparent"></div>
         </div>
         
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col gap-10">
-          <div className="relative w-full max-sm:px-6 h-5/12 overflow-hidden max-sm:hidden max-sm:mb-8">
-            {/* Keep the original banner image but make it transparent or remove it */}
-          </div>
+        <div className="relative z-10 h-full flex flex-col items-end justify-center">
           {/* Text Row */}
-          <div className="h-6/12 max-sm:h-full flex items-center max-sm:items-start max-sm:mt-8">
-            <div className="w-full px-8 max-sm:px-6 text-xl max-sm:text-base gap-1 leading-8">
+          <div className="h-full max-sm:h-full flex items-center justify-center max-sm:items-start max-sm:mt-8">
+            <div className="w-full px-16 max-sm:px-6 text-2xl max-sm:text-xl gap-1 leading-10">
               <button
                 onClick={() => scrollToSection("luke-section")}
                 className="hover:text-amber-400 transition-all duration-70 inline text-amber-200 cursor-pointer"
