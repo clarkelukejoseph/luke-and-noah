@@ -18,7 +18,8 @@ export default function Home() {
 
         <div className="absolute inset-0 flex flex-col items-center justify-center z-10  text-white text-center px-4 gap-8">
           <h1 className="w-6/12 max-sm:w-full max-sm:text-2xl text-4xl leading-relaxed font-light">
-            Luke and Noah Clarke are a Northeastern based filmmaking duo.
+            Luke & Noah Clarke are a Northeastern and Mid-Atlantic based
+            filmmaking duo.
           </h1>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
             <p className="text-xl max-sm:text-base z-50 hover:scale-110 transition-transform bg-white text-black rounded-full py-2 px-6 cursor-pointer">

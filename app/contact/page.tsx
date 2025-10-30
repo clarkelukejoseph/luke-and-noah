@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Header from "@/app/components/Header";
+import Image from "next/image";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -33,8 +34,8 @@ export default function Contact() {
     <main className="w-full">
       <Header />
       
-      <section className="w-12/12 max-sm:w-full px-16 py-12 max-sm:px-8 max-sm:py-8 max-sm:mx-auto max-sm:mt-10">
-        <div className="max-w-full mx-auto max-sm:w-full flex flex-row items-end justify-start max-sm:flex-col max-sm:items-center max-sm:justify-center gap-20">
+      <section className="w-12/12 max-sm:w-full px-16 py-12 max-sm:px-8 max-sm:py-8 max-sm:mx-auto max-sm:mt-10 h-[calc(100vh-4rem)] max-sm:h-auto">
+        <div className="max-w-full mx-auto max-sm:w-full h-full max-sm:h-auto flex flex-row items-stretch justify-start max-sm:flex-col max-sm:items-center max-sm:justify-center gap-20">
           {/* Page Title */}
           <div className="w-8/12 max-sm:w-full">   
           <div className="mb-12">
@@ -125,12 +126,27 @@ export default function Contact() {
           </form>
           </div>
           {/* Additional Contact Info */}
-          <div className="w-3/12 max-sm:w-full">
-            <h3 className="text-xl font-medium text-white mb-4">Other Ways to Connect</h3>
-            <div className="space-y-2 text-gray-300">
-              <p>Email: <a href="mailto:clarkelukejoseph@gmail.com" className="text-amber-400 hover:text-amber-300 transition-colors duration-70">clarkelukejoseph@gmail.com</a></p>
-              <p>Youtube: <a href="https://www.youtube.com/@lukennoahclarke" className="text-amber-400 hover:text-amber-300 transition-colors duration-70">lukennoahclarke</a></p>
-              <p>Instagram: <a href="https://www.instagram.com/lukennoahclarke/" className="text-amber-400 hover:text-amber-300 transition-colors duration-70">lukennoahclarke</a></p>
+          <div className="w-3/12 max-sm:w-full relative overflow-hidden rounded-sm h-full max-sm:h-auto">
+            {/* Background banner image */}
+            <Image
+              src="/contact/contactBanner.png"
+              alt="Contact banner"
+              fill
+              className="object-cover opacity-50 max-sm:hidden"
+              priority
+            />
+            {/* Gradient fades to black like About hero */}
+            <div className="pointer-events-none absolute left-0 right-0 top-0 h-1/6 bg-gradient-to-b from-black to-transparent max-sm:hidden"></div>
+            <div className="pointer-events-none absolute left-0 right-0 bottom-0 h-1/3 bg-gradient-to-t from-black to-transparent max-sm:hidden"></div>
+
+            {/* Foreground content */}
+            <div className="relative z-10 h-full max-sm:h-auto flex flex-col justify-end max-sm:justify-start p-8 max-sm:p-6">
+              <h3 className="text-xl font-medium text-white mb-4">Other Ways to Connect</h3>
+              <div className="space-y-2 text-gray-300">
+                <p>Email: <a href="mailto:clarkelukenoah@gmail.com " className="text-amber-400 hover:text-amber-300 transition-colors duration-70">clarkelukenoah@gmail.com</a></p>
+                <p>Youtube: <a href="https://www.youtube.com/@lukennoahclarke" className="text-amber-400 hover:text-amber-300 transition-colors duration-70">lukennoahclarke</a></p>
+                <p>Instagram: <a href="https://www.instagram.com/lukennoahclarke/" className="text-amber-400 hover:text-amber-300 transition-colors duration-70">lukennoahclarke</a></p>
+              </div>
             </div>
           </div>
         </div>

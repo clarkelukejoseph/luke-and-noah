@@ -19,11 +19,11 @@ export default function AboutPage() {
       <Header />
 
       {/* luke and noah section */}
-      <div className="h-screen flex flex-col luke-noah-section relative">
+      <div className="h-screen max-sm:h-auto flex flex-col luke-noah-section relative pt-24 max-sm:pt-20">
         {/* Background Image */}
         <div className="absolute inset-0 z-0">
           <Image
-            src="/about/tempBackground.jpg"
+            src="/about/banner.png"
             alt="Background"
             fill
             className="object-cover opacity-25"
@@ -36,9 +36,9 @@ export default function AboutPage() {
         </div>
         
         {/* Content */}
-        <div className="relative z-10 h-full flex flex-col items-end justify-center">
+        <div className="relative z-10 h-full max-sm:h-auto flex flex-col items-end justify-center">
           {/* Text Row */}
-          <div className="h-full max-sm:h-full flex items-center justify-center max-sm:items-start max-sm:mt-8">
+          <div className="h-full max-sm:h-auto flex items-center justify-center max-sm:items-start max-sm:mt-0 max-sm:mb-6">
             <div className="w-full px-16 max-sm:px-6 text-2xl max-sm:text-xl gap-1 leading-10">
               <button
                 onClick={() => scrollToSection("luke-section")}
@@ -91,12 +91,12 @@ export default function AboutPage() {
       </div>
 
       {/* Luke Section */}
-      <div id="luke-section">
+      <div id="luke-section" className="scroll-mt-24 max-sm:scroll-mt-20">
         <LukeSection />
       </div>
 
       {/* Noah Section */}
-      <div id="noah-section">
+      <div id="noah-section" className="scroll-mt-24 max-sm:scroll-mt-20">
         <NoahSection />
       </div>
       <Footer />

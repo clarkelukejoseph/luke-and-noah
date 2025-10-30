@@ -24,9 +24,7 @@ export interface WorkProject {
 const workProjectsData: WorkProject[] = [
   {
     id: 1,
-    image: [
-      "/images/chetLarson/screenshot.jpeg",
-    ],
+    image: ["/images/chetLarson/horizontalPoster.jpg"],
     moviePoster: "/images/chetLarson/chetLarson.jpeg",
     gifLink: "/images/chetLarson/larsonGif.mp4",
     title: "Chet Larson",
@@ -101,7 +99,7 @@ const workProjectsData: WorkProject[] = [
     lukeWork: true,
     noahWork: true,
     description:
-      "After running into her ex with her new girlfriend at a convenience store they used to frequent, Mindy finds herself trapped in a continuous time loop.",
+      "After running into her ex with his new girlfriend at a convenience store they used to frequent, Mindy finds herself trapped in a continuous time loop.",
     genre: ["Drama", "Romance"],
     releaseYear: 2024,
     cast: [
@@ -211,12 +209,10 @@ const workProjectsData: WorkProject[] = [
       },
     ],
   },
-  
+
   {
     id: 4,
-    image: [
-      "/images/victorianBoy/smallVictorianBoy.png",
-    ],
+    image: ["/images/victorianBoy/smallVictorianBoy.png"],
     moviePoster: "/images/victorianBoy/victorianBoyVertical.jpg",
     gifLink: "/images/victorianBoy/victorianBoy.mp4",
     title: "The Small Victorian Boy",
@@ -497,12 +493,12 @@ const workProjectsData: WorkProject[] = [
     genre: ["Music Video", "Horror", "Art-House", "Experimental"],
     releaseYear: 2025,
     lukeWork: true,
-    comingSoon: true,
+    comingSoon: false,
     cast: [
       { name: "Lilith Videt Weeks", character: "Herself" },
       { name: "Isaac Lucy", character: "Himself" },
       { name: "Arianna Ganley", character: "Herself" },
-      { name: "Patrick Flanagan", character: "Himself" },
+      { name: "Patrick Flanagan", character: "The Figure" },
     ],
     crew: [
       {
@@ -520,7 +516,16 @@ const workProjectsData: WorkProject[] = [
       { name: "Evelyn Orellana", role: ["Driver"] },
       { name: "Yamile Abuid", role: ["Additional Photography"] },
     ],
-    links: [],
+    links: [
+      {
+        name: "Music Video",
+        link: "https://youtu.be/EsnoWOo3efc?si=GNhOpHJjklaK0mki",
+      },
+      {
+        name: "Teaser",
+        link: "https://www.instagram.com/reel/DPwd6_4jjOj/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==",
+      },
+    ],
     groupings: [
       {
         name: "Luke",
@@ -544,7 +549,7 @@ const workProjectsData: WorkProject[] = [
     gifLink: "/images/tsovaTushDocu/georgiaDoc.mp4",
     title: "Untitled Documentary Short (Tsova-Tush community)",
     description:
-      "This documentary short will focus on the Tsova-Tush community from Tusheti, who speak the critically endangered Tsova-Tush language. With fewer than a couple hundred fluent speakers remaining, the language faces extinction within decades. This ambitious project, which is set to be filmed this summer, will help to document the Tsova-Tush language, culture, and traditions in the short time that it is still possible.",
+      "Filmed throughout July and August 2025, this documentary short will focus on the Tsova-Tush community of Tusheti, Georgia. Their eponymous language has become critically endangered in recent times, with fewer than several hundred fluent speakers remaining. Through examining the languages past, present, and future, as well as documenting this communities annual festival known as Dadaloba, this film will help document the Tsova-Tush’s language, culture and traditions before it is too late.",
     genre: ["Documentary"],
     releaseYear: 2025,
     comingSoon: true,
@@ -552,7 +557,7 @@ const workProjectsData: WorkProject[] = [
     crew: [
       {
         name: "Luke & Noah Clarke",
-        role: ["Director" ],
+        role: ["Director"],
       },
       { name: "Luke Clarke", role: ["Producer"] },
       { name: "Noah Clarke", role: ["Producer"] },
@@ -568,9 +573,7 @@ const workProjectsData: WorkProject[] = [
   },
   {
     id: 9,
-    image: [
-      "/images/wvfs2024/iqbalHorizontal.jpeg",
-    ],
+    image: ["/images/wvfs2024/iqbalHorizontal.jpeg"],
     title: "Nabihah Iqbal Interview | WVFS at SXSW 2024",
     description:
       "In the fourth and final interview conducted by the staff of the WVFS radio station at the 2024 SXSW festival in Austin Texas, interviewer Rory Donohue talks with acclaimed British indie artist Nabihah Iqbal. This was the only of the 4 interviews not shot by Luke, who edited this installment alongside audio editing from Noah.",
@@ -762,10 +765,7 @@ const workProjectsData: WorkProject[] = [
   },
   {
     id: 15,
-    image: [
-      "/images/fsu/softball/softballHorizontal.jpg",
-     
-    ],
+    image: ["/images/fsu/softball/softballHorizontal.jpg"],
     title: "FSU Club Softball Feature",
     description:
       "This news featurette written by reporter Maddy Branning highlights FSU's club softball program.",
@@ -1357,7 +1357,7 @@ const workProjectsData: WorkProject[] = [
   },
   {
     id: 35,
-    image: ["/images/maizes/screenshot.png"],
+    image: ["/images/maizes/maizeHorizontal.jpg"],
     title: "MAIZE5 DJ Mix",
     description:
       "To mark the 5 year anniversary of their now defunct mashup channel Maize Music, Luke & Noah released their third DJ Mix, MAIZE5. Compiling the best mashups the two had constructed over the preceding half decade, this journey through popular recorded music is a perfect send off to this era of their work.",
@@ -1649,7 +1649,7 @@ const workProjectsData: WorkProject[] = [
     ],
   },
   // projects that are coming soon
-  
+
   {
     id: 48,
     image: ["/images/bigScruff/screenshot.png"],
@@ -1694,7 +1694,8 @@ const workProjectsData: WorkProject[] = [
     id: 50,
     image: ["/images/wvfsDocu/screenshot.jpg"],
     title: "Untitled Documentary Short (WVFS Radio Station)",
-    description: "Filmed in 2024, this documentary short will focus on the history and continued importance of the WVFS radio station to the city of Tallahassee.",
+    description:
+      "Filmed in 2024, this documentary short will focus on the history and continued importance of the WVFS radio station to the city of Tallahassee.",
     genre: ["Documentary"],
     releaseYear: 2025,
     comingSoon: true,
@@ -1710,7 +1711,16 @@ const workProjectsData: WorkProject[] = [
     ],
     links: [],
     groupings: [
-      { name: "Luke", group: ["Directing", "Producing", "Editing", "Cinematography", "Documentary"] },
+      {
+        name: "Luke",
+        group: [
+          "Directing",
+          "Producing",
+          "Editing",
+          "Cinematography",
+          "Documentary",
+        ],
+      },
       { name: "Noah", group: ["Directing", "Editing", "Documentary"] },
     ],
   },
@@ -1723,10 +1733,10 @@ const ORDER_BY_ID: number[] = [
   4, // The Small Victorian Boy
   2, // Chet Larson Coda
   5, // Who Is It That Is Going To Carry My Pain? And For Whom?
+  47, // Yell Occult - Mr. Toad's Wild Ride (Music Video)
   6, // President TV of The United States - Did (Official Music Video)
   8, // The Energy Solution - Talk to Me (Official Music Video)
   7, // The Energy Solution - The End of 2010 (Official Music Video)
-  47, // Yell Occult - Mr. Toad's Wild Ride (Music Video)
   49, // Untitled Documentary Short (Tsova-Tush community)
   32, // Artifice CD Art Direction
   15, // FSU Club Softball Feature
@@ -1759,6 +1769,7 @@ const ORDER_BY_ID: number[] = [
   34, // So Much
   36, // Chet Larson (Original Motion Picture Soundtrack)
   37, // Songs That Don't Get the Crowd Goin
+  35, // Maize 5
   38, // Songs That Get the Crowd Goin
   39, // Teachers Playing Minecraft: Episode 1
   40, // Teachers Playing Minecraft: Episode 2
@@ -1770,8 +1781,9 @@ const ORDER_BY_ID: number[] = [
 ];
 
 // Export: sorted by ORDER_BY_ID and with ids remapped to the 1-based index
-export const workProjects: WorkProject[] = ORDER_BY_ID
-  .map((id) => workProjectsData.find((p) => p.id === id))
+export const workProjects: WorkProject[] = ORDER_BY_ID.map((id) =>
+  workProjectsData.find((p) => p.id === id)
+)
   .filter((p): p is WorkProject => Boolean(p))
   .map((project, index) => ({ ...project, id: index + 1 }));
 

@@ -129,25 +129,25 @@ export default function AboutNoah() {
             </div>
 
             {/* Highlight Reel */}
-            {/* <div className="space-y-4">
+            <div className="space-y-4">
             <h3 className="text-3xl font-medium text-white mb-4">
               Highlight Reel
             </h3>
-            <div className="w-full max-w-2xl">
+            <div className="w-full">
               <div
                 className="relative w-full"
                 style={{ paddingBottom: "56.25%" }}
               >
                 <iframe
                   className="absolute top-0 left-0 w-full h-full rounded-sm"
-                  src="https://www.youtube.com/embed/zdRWojGVlIw?si=YzflErSNRWIMt-Jc"
-                  title="Luke Clarke Highlight Reel"
+                  src="https://www.youtube.com/embed/01fpDcoeGzI?si=-MjnmgADNnbo2wPC"
+                  title="Noah Clarke Highlight Reel"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
                 ></iframe>
               </div>
             </div>
-          </div> */}
+          </div>
 
             {/* Works Section */}
             <div className="space-y-4 max-sm:w-full">
