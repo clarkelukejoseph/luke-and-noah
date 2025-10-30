@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import HomeHeader from "./components/HomeHeader";
 import { useEffect, useRef } from "react";
