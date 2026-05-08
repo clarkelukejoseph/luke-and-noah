@@ -32,7 +32,7 @@ export default function AboutLuke() {
             <div className="relative w-110 h-160 max-sm:w-full max-sm:h-120 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm">
               <Image
                 src="/images/aboutPage/luke.jpg"
-                alt="Noah"
+                alt="Luke Clarke"
                 fill
                 className="object-cover"
                 priority
