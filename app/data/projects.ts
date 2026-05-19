@@ -1738,6 +1738,198 @@ const workProjectsData: WorkProject[] = [
       { name: "Noah", group: ["Directing", "Editing", "Documentary"] },
     ],
   },
+  {
+    id: 51,
+    image: ["https://lh3.googleusercontent.com/d/11C6zZHLgnNI48O0_DGnXM-GJBp95uCnZ"],
+    gifLink: "https://lh3.googleusercontent.com/d/11C6zZHLgnNI48O0_DGnXM-GJBp95uCnZ",
+    title: "Container Store Christmas Wrapping Video",
+    description:
+      "A holiday-focused commercial video project for The Container Store, centered around Christmas wrapping and seasonal retail presentation.",
+    genre: ["Commercial", "Holiday", "Social Media"],
+    releaseYear: 2026,
+    cast: [],
+    crew: [
+      { name: "Luke Clarke", role: ["Producer", "Editor", "Cinematographer"] },
+      { name: "Noah Clarke", role: ["Producer", "Editor", "Cinematographer"] },
+    ],
+    links: [],
+    modalPhotos: [
+      "https://lh3.googleusercontent.com/d/1-NsMseMNqdtFE41x0mWaos7cVSAxMAtd",
+      "https://lh3.googleusercontent.com/d/1uzalzGPmGoGF-uuCpObjml5a00v94TkE",
+      "https://lh3.googleusercontent.com/d/1TFBu_obLJKdBr_1elabdggljaEnKwIzp",
+    ],
+    groupings: [
+      {
+        name: "Luke",
+        group: ["Producing", "Editing", "Cinematography"],
+      },
+      {
+        name: "Noah",
+        group: ["Producing", "Editing", "Cinematography"],
+      },
+    ],
+  },
+  {
+    id: 52,
+    image: ["https://lh3.googleusercontent.com/d/1Ud5ZNwKLEEHoiycjPoCPAkX0BAuV-PPA"],
+    gifLink: "https://lh3.googleusercontent.com/d/1Ud5ZNwKLEEHoiycjPoCPAkX0BAuV-PPA",
+    title: "Shootday Parking Garage Photoshoot",
+    description:
+      "A parking garage photoshoot built around stark urban lines, direct flash texture, and nighttime fashion photography.",
+    genre: ["Photography"],
+    releaseYear: 2026,
+    cast: [],
+    crew: [
+      { name: "Luke Clarke", role: ["Photographer"] },
+      { name: "Noah Clarke", role: ["Photographer"] },
+    ],
+    links: [],
+    modalPhotos: [
+      "https://lh3.googleusercontent.com/d/1jtqFZ5yZHBH5mBmMxAsHLtyvx2MOZx0L",
+      "https://lh3.googleusercontent.com/d/1jJBeK9esBJfoRZzPmrCxcI_Uly43fK5H",
+      "https://lh3.googleusercontent.com/d/1-Zx14b69fJML-cpaAFsk6XZgCwyEh6FV",
+    ],
+    groupings: [
+      { name: "Luke", group: ["Photography"] },
+      { name: "Noah", group: ["Photography"] },
+    ],
+  },
+  {
+    id: 53,
+    image: ["https://lh3.googleusercontent.com/d/14OQE-ZUAhwRvi6ZiNIwTt4iDSEaXDH4K"],
+    gifLink: "https://lh3.googleusercontent.com/d/14OQE-ZUAhwRvi6ZiNIwTt4iDSEaXDH4K",
+    title: "454 DJ Set",
+    description:
+      "Photography and video coverage of a full DJ set in New York City.",
+    genre: ["Music", "Photography", "Event Coverage"],
+    releaseYear: 2026,
+    cast: [],
+    crew: [
+      { name: "Luke Clarke", role: ["Photographer", "Cinematographer"] },
+      { name: "Noah Clarke", role: ["Photographer", "Cinematographer"] },
+    ],
+    links: [],
+    modalPhotos: [
+      "https://lh3.googleusercontent.com/d/1PfetsuWl2Px9z5-cM9kvv7uGULLpjuSE",
+    ],
+    groupings: [
+      { name: "Luke", group: ["Photography", "Cinematography", "Music"] },
+      { name: "Noah", group: ["Photography", "Cinematography", "Music"] },
+    ],
+  },
+  {
+    id: 54,
+    image: ["https://lh3.googleusercontent.com/d/1Tkp8HIyr4jSPom5C-GFDd-m0zb6WJqa5"],
+    gifLink: "https://lh3.googleusercontent.com/d/1Tkp8HIyr4jSPom5C-GFDd-m0zb6WJqa5",
+    title: "Summer's Over Posh Lab",
+    description:
+      "A music and visual project for Posh Lab's Summer's Over, pairing a warm late-season mix with image-based presentation.",
+    genre: ["Music", "Photography"],
+    releaseYear: 2026,
+    cast: [],
+    crew: [
+      { name: "Luke Clarke", role: ["Music", "Photography"] },
+      { name: "Noah Clarke", role: ["Music", "Photography"] },
+    ],
+    links: [],
+    modalPhotos: [
+      "https://lh3.googleusercontent.com/d/1M9_Bf8j5kHuHh2XW_2Cf34bluurVksDk",
+      "https://lh3.googleusercontent.com/d/128eBaZGr0klDIQChnXtdQ9tqoFRP95fP",
+    ],
+    groupings: [
+      { name: "Luke", group: ["Music", "Photography"] },
+      { name: "Noah", group: ["Music", "Photography"] },
+    ],
+  },
+  {
+    id: 55,
+    image: ["https://lh3.googleusercontent.com/d/1rl2rhly3kcQvfTiqokST-unDuu1e4p3r"],
+    gifLink: "https://lh3.googleusercontent.com/d/1rl2rhly3kcQvfTiqokST-unDuu1e4p3r",
+    title: "Bone on the Nose",
+    description:
+      "A stylized photo project centered on close-up portraiture, texture, and playful visual abstraction.",
+    genre: ["Photography"],
+    releaseYear: 2026,
+    cast: [],
+    crew: [
+      { name: "Luke Clarke", role: ["Photographer"] },
+      { name: "Noah Clarke", role: ["Photographer"] },
+    ],
+    links: [],
+    modalPhotos: [
+      "https://lh3.googleusercontent.com/d/1ha2oxataNtsKx4MigBGEHEwfk91COC1z",
+      "https://lh3.googleusercontent.com/d/1agigcQWqKWWu4LW5GUTzWst2TVVeAEMH",
+      "https://lh3.googleusercontent.com/d/1jlX4fTYWrB21lITuklQ0dcJU67pOlugd",
+    ],
+    groupings: [
+      { name: "Luke", group: ["Photography"] },
+      { name: "Noah", group: ["Photography"] },
+    ],
+  },
+  {
+    id: 56,
+    image: ["https://lh3.googleusercontent.com/d/1SrU_18HAf0TH27Yf93ZxeftHB4YTlgjt"],
+    gifLink: "https://lh3.googleusercontent.com/d/1SrU_18HAf0TH27Yf93ZxeftHB4YTlgjt",
+    title: "Toppled Toybox",
+    description:
+      "A colorful video and image project with a toybox-like visual palette and playful, collage-driven energy.",
+    genre: ["Video", "Music", "Experimental"],
+    releaseYear: 2026,
+    cast: [],
+    crew: [
+      { name: "Luke Clarke", role: ["Director", "Editor", "Cinematographer"] },
+      { name: "Noah Clarke", role: ["Director", "Editor", "Cinematographer"] },
+    ],
+    links: [],
+    modalPhotos: [
+      "https://lh3.googleusercontent.com/d/1rau0i6nLSJTkNfI1Kd9ilDN0rx4Ll2Ix",
+      "https://lh3.googleusercontent.com/d/1V3vhqIHSG49IzXOs5as4d0Bmc66Sy7z6",
+    ],
+    groupings: [
+      {
+        name: "Luke",
+        group: ["Directing", "Editing", "Cinematography", "Music Video"],
+      },
+      {
+        name: "Noah",
+        group: ["Directing", "Editing", "Cinematography", "Music Video"],
+      },
+    ],
+  },
+  {
+    id: 57,
+    image: ["https://lh3.googleusercontent.com/d/1yZ056UioIuUbiXRX9uRoIrMCkJQwUFQS"],
+    gifLink: "https://lh3.googleusercontent.com/d/1yZ056UioIuUbiXRX9uRoIrMCkJQwUFQS",
+    title: "batsoma - Cutter (Official Music Video)",
+    description:
+      "Shot using five separate cameras, this music video for batsoma's song Cutter is a visually diverse interpretation of the underground Richmond rap scene that batsoma is a part of.",
+    genre: ["Rap", "Music Video"],
+    runtime: "2 minutes",
+    releaseYear: 2026,
+    comingSoon: true,
+    cast: [{ name: "batsoma", character: "Himself" }],
+    crew: [
+      { name: "Luke Clarke", role: ["Producer", "Editor", "Cinematographer", "Colorist"] },
+      { name: "Noah Clarke", role: ["Producer", "Editor", "Cinematographer"] },
+      { name: "Sebastian Mann", role: ["Director", "Producer", "Editor", "Camera Operator"] },
+    ],
+    links: [],
+    modalPhotos: [
+      "https://lh3.googleusercontent.com/d/1VBtVl18c-m17UERySsILYwkAtmlf0m4a",
+      "https://lh3.googleusercontent.com/d/1G5B0YoxyPST_T93MWgsNjoj2SKG-7ZEI",
+      "https://lh3.googleusercontent.com/d/1CcYdr51RJtLHHXy6gkqKTOWgLww3-32a",
+    ],
+    groupings: [
+      {
+        name: "Luke",
+        group: ["Producing", "Editing", "Cinematography", "Music Video"],
+      },
+      {
+        name: "Noah",
+        group: ["Producing", "Editing", "Cinematography", "Music Video"],
+      },
+    ],
+  },
 ];
 
 // Explicit order reflecting the requested listing (by existing ids)
@@ -1746,6 +1938,13 @@ const ORDER_BY_ID: number[] = [
   3, // Convenience
   4, // The Small Victorian Boy
   48, // Big Scruff Visual Album
+  51, // Container Store Christmas Wrapping Video
+  52, // Shootday Parking Garage Photoshoot
+  53, // 454 DJ Set
+  54, // Summer's Over Posh Lab
+  55, // Bone on the Nose
+  56, // Toppled Toybox
+  57, // batsoma - Cutter (Official Music Video)
   2, // Chet Larson Coda
   47, // Yell Occult - Mr. Toad's Wild Ride (Music Video)
   5, // Who Is It That Is Going To Carry My Pain? And For Whom?
