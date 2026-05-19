@@ -15,12 +15,52 @@ declare global {
 export default function Home() {
   const playerRef = useRef<any>(null);
   const containerRef = useRef<HTMLDivElement>(null);
+  const restartTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    let isMounted = true;
+    let apiCheckInterval: ReturnType<typeof setInterval> | null = null;
+
     // Detect iOS
     const isIOSDevice =
       /iPad|iPhone|iPod/.test(navigator.userAgent) ||
       (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+
+    const destroyPlayer = () => {
+      if (playerRef.current) {
+        const resizeHandler = (playerRef.current as any)?._resizeHandler;
+        if (resizeHandler) {
+          window.removeEventListener("resize", resizeHandler);
+        }
+
+        const observer = (playerRef.current as any)?._observer;
+        if (observer) {
+          observer.disconnect();
+        }
+
+        try {
+          playerRef.current.destroy();
+        } catch (e) {
+          // Ignore destroy errors from mobile browsers restoring cached iframes.
+        }
+
+        playerRef.current = null;
+      }
+
+      containerRef.current?.replaceChildren();
+    };
+
+    const restartPlayer = (delay = 0) => {
+      if (restartTimeoutRef.current) {
+        clearTimeout(restartTimeoutRef.current);
+      }
+
+      restartTimeoutRef.current = setTimeout(() => {
+        if (!isMounted) return;
+        destroyPlayer();
+        loadYouTubeAPI();
+      }, delay);
+    };
 
     // Load YouTube IFrame API
     const loadYouTubeAPI = () => {
@@ -32,9 +72,16 @@ export default function Home() {
       // Check if script is already being loaded
       if (document.querySelector('script[src*="youtube.com/iframe_api"]')) {
         // Wait for API to be ready
-        const checkInterval = setInterval(() => {
+        if (apiCheckInterval) {
+          clearInterval(apiCheckInterval);
+        }
+
+        apiCheckInterval = setInterval(() => {
           if (window.YT && window.YT.Player) {
-            clearInterval(checkInterval);
+            if (apiCheckInterval) {
+              clearInterval(apiCheckInterval);
+              apiCheckInterval = null;
+            }
             initializePlayer();
           }
         }, 100);
@@ -71,7 +118,17 @@ export default function Home() {
     };
 
     const initializePlayer = () => {
-      if (!containerRef.current || playerRef.current) return;
+      if (!containerRef.current) return;
+
+      if (playerRef.current) {
+        const existingIframe = containerRef.current.querySelector(
+          'iframe[src*="youtube.com"]'
+        );
+        if (existingIframe?.isConnected) return;
+        destroyPlayer();
+      }
+
+      containerRef.current.replaceChildren();
 
       const playerId = `youtube-player-${Date.now()}`;
       const playerDiv = document.createElement("div");
@@ -356,48 +413,65 @@ export default function Home() {
 
     // Fallback: retry on visibility change
     const onVisibilityChange = () => {
-      if (!document.hidden && playerRef.current) {
-        setTimeout(() => {
-          safePlayVideo(playerRef.current);
-          tryPlayPostMessage();
-        }, 100);
-      }
+      if (document.hidden) return;
+
+      setTimeout(() => {
+        const hasIframe = containerRef.current?.querySelector(
+          'iframe[src*="youtube.com"]'
+        );
+
+        if (!playerRef.current || !hasIframe) {
+          restartPlayer();
+          return;
+        }
+
+        safePlayVideo(playerRef.current);
+        tryPlayPostMessage();
+      }, 100);
     };
     document.addEventListener("visibilitychange", onVisibilityChange);
 
-    // Retry on page focus for iOS
+    // Retry on page focus for iOS and rebuild after mobile browser cache restores.
     const onFocus = () => {
-      if (isIOSDevice) {
-        setTimeout(() => {
-          if (playerRef.current) {
-            safePlayVideo(playerRef.current);
-          }
-          tryPlayPostMessage();
-        }, 100);
-      }
+      if (!isIOSDevice) return;
+
+      setTimeout(() => {
+        const hasIframe = containerRef.current?.querySelector(
+          'iframe[src*="youtube.com"]'
+        );
+
+        if (!playerRef.current || !hasIframe) {
+          restartPlayer();
+          return;
+        }
+
+        safePlayVideo(playerRef.current);
+        tryPlayPostMessage();
+      }, 100);
     };
     window.addEventListener("focus", onFocus);
 
+    const onPageShow = (event: PageTransitionEvent) => {
+      if (event.persisted) {
+        restartPlayer();
+      } else {
+        onVisibilityChange();
+      }
+    };
+    window.addEventListener("pageshow", onPageShow);
+
     return () => {
+      isMounted = false;
+      if (apiCheckInterval) {
+        clearInterval(apiCheckInterval);
+      }
+      if (restartTimeoutRef.current) {
+        clearTimeout(restartTimeoutRef.current);
+      }
       document.removeEventListener("visibilitychange", onVisibilityChange);
       window.removeEventListener("focus", onFocus);
-      if (playerRef.current) {
-        // Remove resize handler if it exists
-        const resizeHandler = (playerRef.current as any)?._resizeHandler;
-        if (resizeHandler) {
-          window.removeEventListener("resize", resizeHandler);
-        }
-        // Disconnect observer if it exists
-        const observer = (playerRef.current as any)?._observer;
-        if (observer) {
-          observer.disconnect();
-        }
-        try {
-          playerRef.current.destroy();
-        } catch (e) {
-          // Ignore destroy errors
-        }
-      }
+      window.removeEventListener("pageshow", onPageShow);
+      destroyPlayer();
     };
   }, []);
   return (
