@@ -20,6 +20,22 @@ export default function AboutNoah() {
     setIsModalOpen(true);
   };
 
+  const notableWorkOrder = [
+    "Convenience",
+    "The Energy Solution - The End of 2010 (Official Music Video)",
+    "The Energy Solution - Talk to Me (Official Music Video)",
+    "Chet Larson",
+    "Chet Larson Coda",
+    "Hairless Dog or The Mirror March",
+    "Artifice CD Art Direction",
+    "The Small Victorian Boy",
+    "Who Is It That Is Going To Carry My Pain? And For Whom?",
+  ];
+
+  const notableProjects = notableWorkOrder
+    .map((title) => getNoahProjects().find((project) => project.title === title))
+    .filter((project): project is WorkProject => Boolean(project));
+
   return (
     <main className="w-full">
       <section className="w-11/12 max-sm:w-full px-16 py-12 max-sm:px-4 max-sm:py-8">
@@ -155,7 +171,7 @@ export default function AboutNoah() {
                 Notable Work
               </h3>
               <div className="flex flex-wrap gap-4 max-sm:flex-col max-sm:w-full">
-                {getNoahProjects().map((project) => (
+                {notableProjects.map((project) => (
                   <div key={project.id} className="max-sm:w-full">
                     <div className="relative w-40 h-60 max-sm:w-full max-sm:h-140 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-70">
                       <div onClick={() => handleProjectClick(project)}>

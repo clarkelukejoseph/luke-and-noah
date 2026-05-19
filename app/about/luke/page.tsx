@@ -23,6 +23,19 @@ export default function AboutLuke() {
     setIsModalOpen(true);
   };
 
+  const notableWorkOrder = [
+    "Convenience",
+    "The Small Victorian Boy",
+    "Chet Larson",
+    "Big Scruff Visual Album",
+    "President TV of The United States - Did (Official Music Video)",
+    "Yell Occult - Mr. Toad's Wild Ride (Music Video)",
+  ];
+
+  const notableProjects = notableWorkOrder
+    .map((title) => getLukeProjects().find((project) => project.title === title))
+    .filter((project): project is WorkProject => Boolean(project));
+
   return (
     <main className="w-full pb-36">
       <section className="w-11/12 max-sm:w-full px-16 py-12 max-sm:px-4 max-sm:py-8">
@@ -186,30 +199,7 @@ export default function AboutLuke() {
                 Notable Work
               </h3>
               <div className="flex flex-wrap gap-4 max-sm:flex-col max-sm:w-full">
-              {getLukeProjects()
-                .slice()
-                .sort((a, b) => {
-                  const desiredOrder = [
-                    "Convenience",
-                    "The Small Victorian Boy",
-                    "Chet Larson",
-                    "Yell Occult - Mr. Toad's Wild Ride (Music Video)",
-                    "Chet Larson Coda",
-                    "President TV of The United States - Did (Official Music Video)",
-                    "The Energy Solution - Talk to Me (Official Music Video)",
-                    "Mountains",
-                    "The Energy Solution - The End of 2010 (Official Music Video)",
-                    "Let's Talk Moco: Visarts Center",
-                    "Artifice CD Art Direction",
-                    "FSU Club Softball Feature",
-                  ];
-                  const indexA = desiredOrder.indexOf(a.title);
-                  const indexB = desiredOrder.indexOf(b.title);
-                  const normA = indexA === -1 ? Number.MAX_SAFE_INTEGER : indexA;
-                  const normB = indexB === -1 ? Number.MAX_SAFE_INTEGER : indexB;
-                  return normA - normB;
-                })
-                .map((project) => (
+              {notableProjects.map((project) => (
                   <div key={project.id} className="max-sm:w-full">
                     <div className="relative w-40 h-60 max-sm:w-full max-sm:h-140 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-70">
                       <div onClick={() => handleProjectClick(project)}>
