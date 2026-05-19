@@ -63,7 +63,7 @@ export default function AboutNoah() {
               <div className="flex flex-row gap-2 text-xl">
                 <h2 className="text-gray-300 font-light">b. 2001 /</h2>
                 <Link
-                  href="https://www.instagram.com/noahgclarke/"
+                  href="https://www.instagram.com/playmaker.no/"
                   target="_blank"
                   className="font-light text-amber-200 hover:text-amber-400 transition-colors duration-70 ease-in-out"
                 >
