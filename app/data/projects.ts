@@ -1660,7 +1660,11 @@ const workProjectsData: WorkProject[] = [
   },
   {
     id: 48,
-    image: ["/images/bigScruff/screenshot.png"],
+    image: [
+      "https://lh3.googleusercontent.com/d/1SqxUqdkayTObqNrBE-crrIKjbN1ktVhc=w2880",
+    ],
+    moviePoster:
+      "https://lh3.googleusercontent.com/d/1hZeFDilYPTm7wki0Wd-JdS0yFXYmInrs=w1920",
     gifLink: "/images/bigScruff/bigScruffWebsite.mp4",
     title: "Big Scruff Visual Album",
     description:
