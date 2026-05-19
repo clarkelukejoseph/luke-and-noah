@@ -119,6 +119,7 @@ export default function Home() {
           loop: 1,
           playlist: "xxvAzOGf3gs",
           controls: 0,
+          disablekb: 1,
           rel: 0,
           showinfo: 0,
           modestbranding: 1,
@@ -126,6 +127,7 @@ export default function Home() {
           enablejsapi: 1,
           fs: 0,
           iv_load_policy: 3,
+          cc_load_policy: 0,
         },
         events: {
           onReady: (event: any) => {
@@ -409,7 +411,7 @@ export default function Home() {
         {/* Fallback iframe for browsers that don't support JS API - hidden by default */}
         <iframe
           className="absolute inset-0 w-full h-full pointer-events-none opacity-0 -z-10"
-          src="https://www.youtube.com/embed/xxvAzOGf3gs?si=wCLiDUfhNU4-uNsR&autoplay=1&mute=1&playsinline=1&loop=1&playlist=xxvAzOGf3gs&controls=0&rel=0&showinfo=0&modestbranding=1&enablejsapi=1"
+          src="https://www.youtube.com/embed/xxvAzOGf3gs?si=wCLiDUfhNU4-uNsR&autoplay=1&mute=1&playsinline=1&loop=1&playlist=xxvAzOGf3gs&controls=0&disablekb=1&rel=0&showinfo=0&modestbranding=1&fs=0&iv_load_policy=3&cc_load_policy=0&enablejsapi=1"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
