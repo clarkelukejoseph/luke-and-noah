@@ -1907,7 +1907,7 @@ const workProjectsData: WorkProject[] = [
     runtime: "2 minutes",
     releaseYear: 2026,
     comingSoon: true,
-    cast: [{ name: "batsoma", character: "Himself" }],
+    cast: [{ name: "batsoma", character: "as herself" }],
     crew: [
       { name: "Luke Clarke", role: ["Producer", "Editor", "Cinematographer", "Colorist"] },
       { name: "Noah Clarke", role: ["Producer", "Editor", "Cinematographer"] },
@@ -1967,13 +1967,6 @@ const ORDER_BY_ID: number[] = [
   3, // Convenience
   4, // The Small Victorian Boy
   48, // Big Scruff Visual Album
-  51, // Container Store Christmas Wrapping Video
-  52, // Shootday Parking Garage Photoshoot
-  53, // 454 DJ Set
-  54, // Summer's Over Posh Lab
-  55, // Bone on the Nose
-  56, // Toppled Toybox
-  57, // batsoma - Cutter (Official Music Video)
   2, // Chet Larson Coda
   47, // Yell Occult - Mr. Toad's Wild Ride (Music Video)
   5, // Who Is It That Is Going To Carry My Pain? And For Whom?
@@ -2021,6 +2014,13 @@ const ORDER_BY_ID: number[] = [
   43, // Cougar Cubs Spooktacular
   44, // Cougar Cubs Thankstacular
   45, // Cougar Cubs Wintacular
+  51, // Container Store Christmas Wrapping Video
+  52, // Shootday Parking Garage Photoshoot
+  53, // 454 DJ Set
+  54, // Summer's Over Posh Lab
+  55, // Bone on the Nose
+  56, // Toppled Toybox
+  57, // batsoma - Cutter (Official Music Video)
 ];
 
 // Export: sorted by ORDER_BY_ID and with ids remapped to the 1-based index
