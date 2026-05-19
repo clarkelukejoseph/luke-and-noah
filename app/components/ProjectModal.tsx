@@ -17,6 +17,9 @@ export default function ProjectModal({
   project,
 }: ProjectModalProps) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
+  const usesImageHeader =
+    project?.gifLink?.toLowerCase().endsWith(".gif") ||
+    project?.gifLink?.includes("drive.google.com");
 
   useEffect(() => {
     if (!isOpen || !project?.gifLink) return;
@@ -159,18 +162,26 @@ export default function ProjectModal({
               exit={{ opacity: 0, y: -20 }}
             >
               {project.gifLink ? (
-                <video
-                  key={project.gifLink}
-                  ref={videoRef}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  preload="auto"
-                  className="w-full h-full object-cover rounded-t-lg"
-                  poster={project.image[0]}
-                  src={project.gifLink}
-                />
+                usesImageHeader ? (
+                  <img
+                    src={project.gifLink}
+                    alt={project.title}
+                    className="w-full h-full object-cover rounded-t-lg"
+                  />
+                ) : (
+                  <video
+                    key={project.gifLink}
+                    ref={videoRef}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    preload="auto"
+                    className="w-full h-full object-cover rounded-t-lg"
+                    poster={project.image[0]}
+                    src={project.gifLink}
+                  />
+                )
               ) : (
                 <Image
                   src={project.image[0]}
@@ -277,6 +288,22 @@ export default function ProjectModal({
                 </div>
               </motion.div>
 
+              {project.runtime && (
+                <motion.div
+                  className="mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: 0.65, duration: 0.3 },
+                  }}
+                  exit={{ opacity: 0, y: 20 }}
+                >
+                  <h2 className="section-title">Runtime</h2>
+                  <span className="chip-gray">{project.runtime}</span>
+                </motion.div>
+              )}
+
               {/* Cast */}
               {project.cast.length > 0 && (
                 <motion.div 
@@ -374,6 +401,31 @@ export default function ProjectModal({
                       >
                         {accolade}
                       </motion.span>
+                    ))}
+                  </div>
+                </motion.div>
+              )}
+
+              {project.notes && project.notes.length > 0 && (
+                <motion.div
+                  className="mb-6"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{
+                    opacity: 1,
+                    y: 0,
+                    transition: { delay: 1.1, duration: 0.3 },
+                  }}
+                  exit={{ opacity: 0, y: 20 }}
+                >
+                  <h2 className="section-title">Notes</h2>
+                  <div className="flex flex-col gap-2">
+                    {project.notes.map((note, index) => (
+                      <p
+                        key={index}
+                        className="text-gray-300 leading-relaxed text-sm"
+                      >
+                        {note}
+                      </p>
                     ))}
                   </div>
                 </motion.div>

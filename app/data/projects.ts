@@ -5,12 +5,14 @@ export interface WorkProject {
   description: string;
   genre: string[];
   releaseYear: number;
+  runtime?: string;
   moviePoster?: string;
   cast: { name: string; character: string }[];
   crew: { name: string; role: string[] }[];
   links: { name: string; link: string }[];
   quotes?: string[];
   accolades?: string[];
+  notes?: string[];
   groupings?: { name: string; group: string[] }[];
   lukeWork?: boolean;
   noahWork?: boolean;
@@ -219,9 +221,10 @@ const workProjectsData: WorkProject[] = [
     description:
       "In post Civil War West Virginia, 9 year old Little Jamie has his life forever changed when he unexpectedly meets his Uncle Vernon, who tells him that both his parents died only two nights ago. However, not all is as it seems with this strange man.",
     genre: ["Comedy", "Mystery", "Historical"],
+    runtime: "17 minutes",
     lukeWork: true,
     noahWork: true,
-    releaseYear: 2025,
+    releaseYear: 2024,
     cast: [
       { name: "Luke Clarke", character: "Little Jamie" },
       { name: "Sam Ingram", character: "Uncle Vernon" },
@@ -263,6 +266,7 @@ const workProjectsData: WorkProject[] = [
       { name: "Trailer 1", link: "https://www.instagram.com/p/DCkB3kRR-E7/" },
       { name: "Trailer 2", link: "https://www.instagram.com/p/DCkB3kRR-E7/" },
     ],
+    accolades: ["Official Selection - Sideworld Video Festival Philadelphia (2026)"],
     groupings: [
       {
         name: "Luke",
@@ -291,6 +295,7 @@ const workProjectsData: WorkProject[] = [
     lukeWork: true,
     noahWork: true,
     genre: ["Comedy", "Soap Opera", "Parody"],
+    runtime: "2 minutes",
     releaseYear: 2020,
     cast: [
       { name: "Marco Panic", character: "Williamson" },
@@ -324,6 +329,10 @@ const workProjectsData: WorkProject[] = [
         name: "Youtube",
         link: "https://youtu.be/M0TAiDSJjsE?si=Sfu5Kr3U9WyZdjf1",
       },
+    ],
+    accolades: ["Official Selection - Full Circle Film Festival (2022)"],
+    notes: [
+      "Made in collaboration with Montgomery Community Media. Originally broadcast on their television station.",
     ],
     groupings: [
       { name: "Luke", group: ["Directing", "Producing", "Writing", "Editing"] },
@@ -1038,11 +1047,12 @@ const workProjectsData: WorkProject[] = [
     id: 25,
     image: ["/images/hairlessDog/hairlessDogHorizontal.png"],
     moviePoster: "/images/hairlessDog/hairlessDogVertical.jpg",
-    title: "Hairless Dog",
+    title: "Hairless Dog or The Mirror March",
     description:
-      "In this 2023 black and white dramedy short by writer and director Tommy Adzema, Noah plays Ian alongside Sara Gonzalez as Lucy.",
+      "In this 2023 black and white dramedy short by writer and director Kane Bumpers, we follow a mime going about their lonely, day to day tasks. In the film, Luke plays a thief who steals what little money the mime makes busking.",
     genre: ["Drama"],
     noahWork: true,
+    runtime: "8 minutes",
     releaseYear: 2023,
     cast: [
       { name: "Noah Clarke", character: "Ian" },
@@ -1071,6 +1081,7 @@ const workProjectsData: WorkProject[] = [
         link: "https://youtu.be/-b4cW_N0l70?si=R_Ui77UG6C_8BoKU",
       },
     ],
+    accolades: ["Official Selection - Full Circle Film Festival (2023)"],
     groupings: [{ name: "Noah", group: ["Acting"] }],
   },
   {
@@ -1653,36 +1664,38 @@ const workProjectsData: WorkProject[] = [
   {
     id: 48,
     image: ["/images/bigScruff/screenshot.png"],
-    title: "Big Scruff - Remind EP (Music Video)",
+    gifLink:
+      "https://drive.google.com/uc?export=view&id=1n-sWvqPHeR7gHGVfF6Wb1YZzklmsjer5",
+    title: "Big Scruff Visual Album",
     description:
-      "Created from the most abstract footage shot while creating the music video for Mr. Toad’s Wild Wide, this music video will find Luke & Noah creating their most experimental and least literal work yet.",
-    genre: ["Music Video", "Experimental", "Art-House"],
-    releaseYear: 2025,
-    comingSoon: true,
-    cast: [
-      { name: "Lilith Videt Weeks", character: "Herself" },
-      { name: "Isaac Lucy", character: "Himself" },
-      { name: "Arianna Ganley", character: "Herself" },
-      { name: "Patrick Flanagan", character: "Himself" },
-    ],
+      "Created from an eclectic blend of footage dating from over a decade before its release to November 2025, the Clarke brothers' first visual album adapts recording artist I.L.L.'s EP of the same name into an abstract look at grief and nostalgia.",
+    genre: ["Music", "Art-House", "Experimental"],
+    runtime: "21 minutes",
+    releaseYear: 2026,
+    cast: [],
     crew: [
       {
         name: "Luke & Noah Clarke",
         role: ["Director", "Editor", "Cinematographer"],
       },
-      { name: "Luke Clarke", role: ["Producer"] },
+      { name: "Lilith Videt Weeks", role: ["Visual Synthesizer"] },
     ],
-    links: [],
+    accolades: [
+      "Official Selection - Sideworld Art Party Baltimore (2025)",
+      "Official Selection - Sideworld Video Festival New York City (2026) (In the Remind Segment Only)",
+    ],
+    links: [
+      {
+        name: "Youtube",
+        link: "https://youtu.be/7IQgkjc1GHc?si=MW7SL-yxNF12Teb_",
+      },
+      { name: "Trailer", link: "https://www.instagram.com/p/DUoMNY7D52w/" },
+      { name: "Letterboxd", link: "https://letterboxd.com/film/big-scruff/" },
+    ],
     groupings: [
       {
         name: "Luke",
-        group: [
-          "Directing",
-          "Producing",
-          "Editing",
-          "Cinematography",
-          "Music Video",
-        ],
+        group: ["Directing", "Editing", "Cinematography", "Music Video"],
       },
       {
         name: "Noah",
