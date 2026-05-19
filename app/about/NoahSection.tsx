@@ -38,7 +38,7 @@ export default function AboutNoah() {
 
   return (
     <main className="w-full">
-      <section className="w-11/12 max-sm:w-full px-16 py-12 max-sm:px-4 max-sm:py-8">
+      <section className="w-11/12 max-sm:w-full px-16 pt-6 pb-12 max-sm:px-4 max-sm:pt-4 max-sm:pb-8">
         <div className="flex w-full flex-col lg:flex-row gap-12 max-sm:gap-8 items-start">
           {/* Left Column - Vertical Image */}
           <div className="flex justify-start lg:justify-start max-sm:w-full">

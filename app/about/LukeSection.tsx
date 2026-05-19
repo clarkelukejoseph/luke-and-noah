@@ -37,7 +37,7 @@ export default function AboutLuke() {
     .filter((project): project is WorkProject => Boolean(project));
 
   return (
-    <main className="w-full pb-36">
+    <main className="w-full pb-10 max-sm:pb-6">
       <section className="w-11/12 max-sm:w-full px-16 py-12 max-sm:px-4 max-sm:py-8">
         <div className="flex w-full flex-col lg:flex-row gap-12 max-sm:gap-8 items-start">
           {/* Left Column - Vertical Image */}
