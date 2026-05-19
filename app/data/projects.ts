@@ -1987,7 +1987,6 @@ const ORDER_BY_ID: number[] = [
   34, // So Much
   19, // Gramps: The Movie - 10 Year Anniversary Commentary
   28, // The Rumor of Real Things | STITCH Runway | SS24
-  58, // VIP Skylark, Laron - Floral (Official Music Video)
   29, // Seminole Scoop Episodes 24-34
   15, // FSU Club Softball Feature
   30, // Toro Portuguese Photoshoot
@@ -1995,6 +1994,7 @@ const ORDER_BY_ID: number[] = [
   11, // Mali Velasquez Interview | WVFS at SXSW 2024
   13, // FSU Campus Tours Featurette
   12, // Friko Interview | WVFS at SXSW 2024
+  58, // VIP Skylark, Laron - Floral (Official Music Video)
   16, // South of Soho Featurette
   9, // Nabihah Iqbal Interview | WVFS at SXSW 2024
   21, // Three Torches: Spring Episode 3
@@ -2007,13 +2007,6 @@ const ORDER_BY_ID: number[] = [
   23, // ...In with the New
   22, // A Ghost at a Costume Party
   26, // Okay, Who Killed George?
-  39, // Teachers Playing Minecraft: Episode 1
-  40, // Teachers Playing Minecraft: Episode 2
-  41, // Teachers Playing Minecraft: Episode 3
-  42, // 2019 Cougar Cub Graduation
-  43, // Cougar Cubs Spooktacular
-  44, // Cougar Cubs Thankstacular
-  45, // Cougar Cubs Wintacular
   51, // Container Store Christmas Wrapping Video
   52, // Shootday Parking Garage Photoshoot
   53, // 454 DJ Set
@@ -2021,6 +2014,13 @@ const ORDER_BY_ID: number[] = [
   55, // Bone on the Nose
   56, // Toppled Toybox
   57, // batsoma - Cutter (Official Music Video)
+  39, // Teachers Playing Minecraft: Episode 1
+  40, // Teachers Playing Minecraft: Episode 2
+  41, // Teachers Playing Minecraft: Episode 3
+  42, // 2019 Cougar Cub Graduation
+  43, // Cougar Cubs Spooktacular
+  44, // Cougar Cubs Thankstacular
+  45, // Cougar Cubs Wintacular
 ];
 
 // Export: sorted by ORDER_BY_ID and with ids remapped to the 1-based index
