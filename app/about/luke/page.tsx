@@ -171,7 +171,7 @@ export default function AboutLuke() {
                 >
                   <iframe
                     className="absolute top-0 left-0 w-full h-full rounded-sm"
-                    src="https://www.youtube.com/embed/NqHpkTqqbLE?si=c1_9YhJsoTfcz5Wr"
+                    src="https://www.youtube.com/embed/jVDhI7fnGTA"
                     title="Luke Clarke Highlight Reel"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     allowFullScreen
