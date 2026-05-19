@@ -1752,7 +1752,12 @@ const workProjectsData: WorkProject[] = [
       { name: "Luke Clarke", role: ["Producer", "Editor", "Cinematographer"] },
       { name: "Noah Clarke", role: ["Producer", "Editor", "Cinematographer"] },
     ],
-    links: [],
+    links: [
+      {
+        name: "LinkedIn",
+        link: "https://www.linkedin.com/posts/luke-clarke-a547862b5_recently-i-had-the-opportunity-to-produce-activity-7412185788924317697-8WzI?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEvBWmABYwIxn6LtY180Al-zwwcxz_TQgXQ",
+      },
+    ],
     modalPhotos: [
       "https://lh3.googleusercontent.com/d/1-NsMseMNqdtFE41x0mWaos7cVSAxMAtd",
       "https://lh3.googleusercontent.com/d/1uzalzGPmGoGF-uuCpObjml5a00v94TkE",
@@ -1783,7 +1788,12 @@ const workProjectsData: WorkProject[] = [
       { name: "Luke Clarke", role: ["Photographer"] },
       { name: "Noah Clarke", role: ["Photographer"] },
     ],
-    links: [],
+    links: [
+      {
+        name: "LinkedIn",
+        link: "https://www.linkedin.com/posts/luke-clarke-a547862b5_over-the-last-few-months-i-have-been-working-activity-7406324825310257152-23Mz?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAEvBWmABYwIxn6LtY180Al-zwwcxz_TQgXQ",
+      },
+    ],
     modalPhotos: [
       "https://lh3.googleusercontent.com/d/1jtqFZ5yZHBH5mBmMxAsHLtyvx2MOZx0L",
       "https://lh3.googleusercontent.com/d/1jJBeK9esBJfoRZzPmrCxcI_Uly43fK5H",
@@ -1808,7 +1818,12 @@ const workProjectsData: WorkProject[] = [
       { name: "Luke Clarke", role: ["Photographer", "Cinematographer"] },
       { name: "Noah Clarke", role: ["Photographer", "Cinematographer"] },
     ],
-    links: [],
+    links: [
+      {
+        name: "Youtube",
+        link: "https://www.youtube.com/watch?v=N9InujfEAPg",
+      },
+    ],
     modalPhotos: [
       "https://lh3.googleusercontent.com/d/1PfetsuWl2Px9z5-cM9kvv7uGULLpjuSE",
     ],
@@ -1831,7 +1846,13 @@ const workProjectsData: WorkProject[] = [
       { name: "Luke Clarke", role: ["Music", "Photography"] },
       { name: "Noah Clarke", role: ["Music", "Photography"] },
     ],
-    links: [],
+    links: [
+      { name: "Posh Lab", link: "https://poshlab.org/" },
+      {
+        name: "Instagram Ad",
+        link: "https://www.instagram.com/p/DTTCzC3jpyZ/",
+      },
+    ],
     modalPhotos: [
       "https://lh3.googleusercontent.com/d/1M9_Bf8j5kHuHh2XW_2Cf34bluurVksDk",
       "https://lh3.googleusercontent.com/d/128eBaZGr0klDIQChnXtdQ9tqoFRP95fP",
@@ -1889,7 +1910,10 @@ const workProjectsData: WorkProject[] = [
       { name: "Luke Clarke", role: ["Director", "Editor", "Cinematographer"] },
       { name: "Noah Clarke", role: ["Director", "Editor", "Cinematographer"] },
     ],
-    links: [],
+    links: [
+      { name: "Episode 1", link: "https://www.instagram.com/p/DWM2KpzD9ox/" },
+      { name: "Episode 2", link: "https://www.instagram.com/p/DWXJmRAD4Ax/" },
+    ],
     modalPhotos: [
       "https://lh3.googleusercontent.com/d/1rau0i6nLSJTkNfI1Kd9ilDN0rx4Ll2Ix",
       "https://lh3.googleusercontent.com/d/1V3vhqIHSG49IzXOs5as4d0Bmc66Sy7z6",
