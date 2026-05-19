@@ -3,7 +3,7 @@
 import { useState, useMemo, useEffect } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import WorkCard from "../components/WorkCard";
+import AnimatedWorkCard from "../components/AnimatedWorkCard";
 import ProjectModal from "../components/ProjectModal";
 import { workProjects, WorkProject } from "../data/projects";
 
@@ -125,14 +125,15 @@ export default function WorkPage() {
           
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project) => (
-              <WorkCard
+            {filteredProjects.map((project, index) => (
+              <AnimatedWorkCard
                 key={project.id}
                 image={project.image[0]}
                 title={project.title}
                 onClick={() => handleProjectClick(project)}
                 opacity={project.opacity}
                 comingSoon={project.comingSoon}
+                index={index}
               />
             ))}
           </div>
