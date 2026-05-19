@@ -211,7 +211,6 @@ const workProjectsData: WorkProject[] = [
       },
     ],
   },
-
   {
     id: 4,
     image: ["/images/victorianBoy/smallVictorianBoy.png"],
@@ -1659,8 +1658,6 @@ const workProjectsData: WorkProject[] = [
       { name: "Noah", group: ["Producing", "Documentary"] },
     ],
   },
-  // projects that are coming soon
-
   {
     id: 48,
     image: ["/images/bigScruff/screenshot.png"],
@@ -1743,46 +1740,46 @@ const ORDER_BY_ID: number[] = [
   1, // Chet Larson
   3, // Convenience
   4, // The Small Victorian Boy
+  48, // Big Scruff Visual Album
   2, // Chet Larson Coda
-  5, // Who Is It That Is Going To Carry My Pain? And For Whom?
   47, // Yell Occult - Mr. Toad's Wild Ride (Music Video)
+  5, // Who Is It That Is Going To Carry My Pain? And For Whom?
   6, // President TV of The United States - Did (Official Music Video)
   8, // The Energy Solution - Talk to Me (Official Music Video)
-  7, // The Energy Solution - The End of 2010 (Official Music Video)
   49, // Untitled Documentary Short (Tsova-Tush community)
+  7, // The Energy Solution - The End of 2010 (Official Music Video)
   32, // Artifice CD Art Direction
-  15, // FSU Club Softball Feature
   20, // Chet Larson - Introduction feat. osquinn
-  11, // Mali Velasquez Interview | WVFS at SXSW 2024
-  50, // Untitled Documentary Short (WVFS Radio Station)
-  48, // Big Scruff - Remind EP (Music Video)
-  13, // FSU Campus Tours Featurette
   46, // Let's Talk Moco: Visarts Center
+  50, // Untitled Documentary Short (WVFS Radio Station)
+  35, // MAIZE5 DJ Mix
+  38, // Songs That Get the Crowd Goin
+  37, // Songs That Don't Get the Crowd Goin
+  25, // Hairless Dog or The Mirror March
+  36, // Chet Larson (Original Motion Picture Soundtrack)
+  31, // Mountains
+  34, // So Much
+  19, // Gramps: The Movie - 10 Year Anniversary Commentary
+  28, // The Rumor of Real Things | STITCH Runway | SS24
+  29, // Seminole Scoop Episodes 24-34
+  15, // FSU Club Softball Feature
+  30, // Toro Portuguese Photoshoot
+  33, // Roadside BTS Photography
+  11, // Mali Velasquez Interview | WVFS at SXSW 2024
+  13, // FSU Campus Tours Featurette
   12, // Friko Interview | WVFS at SXSW 2024
-  25, // Hairless Dog
   16, // South of Soho Featurette
-  24, // Atom Bomb
   9, // Nabihah Iqbal Interview | WVFS at SXSW 2024
   21, // Three Torches: Spring Episode 3
   10, // Ellie Bleach Interview | WVFS at SXSW 2024
-  23, // ...In with the New
   14, // FSU Mentor Transfer Program Featurette
   17, // Marching Chiefs News Featurette
   18, // FSU Gaming Committee News Featurette
-  19, // Gramps: The Movie - 10 Year Anniversary Commentary
+  24, // Atom Bomb
+  27, // The Fears We Can't Escape
+  23, // ...In with the New
   22, // A Ghost at a Costume Party
   26, // Okay, Who Killed George?
-  27, // The Fears We Can't Escape
-  28, // The Rumor of Real Things | STITCH Runway | SS24
-  29, // Seminole Scoop Episodes 24-34
-  30, // Toro Portuguese Photoshoot
-  31, // Mountains
-  33, // Roadside BTS Photography
-  34, // So Much
-  36, // Chet Larson (Original Motion Picture Soundtrack)
-  37, // Songs That Don't Get the Crowd Goin
-  35, // Maize 5
-  38, // Songs That Get the Crowd Goin
   39, // Teachers Playing Minecraft: Episode 1
   40, // Teachers Playing Minecraft: Episode 2
   41, // Teachers Playing Minecraft: Episode 3
