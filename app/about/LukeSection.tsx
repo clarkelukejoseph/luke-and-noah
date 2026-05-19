@@ -28,8 +28,8 @@ export default function AboutLuke() {
     "The Small Victorian Boy",
     "Chet Larson",
     "Big Scruff Visual Album",
-    "President TV of The United States - Did (Official Music Video)",
     "Yell Occult - Mr. Toad's Wild Ride (Music Video)",
+    "President TV of The United States - Did (Official Music Video)",
   ];
 
   const notableProjects = notableWorkOrder
