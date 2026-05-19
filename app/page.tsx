@@ -112,12 +112,12 @@ export default function Home() {
       }
 
       playerRef.current = new window.YT.Player(playerId, {
-        videoId: "xxvAzOGf3gs",
+        videoId: "RVR4syciE7k",
         playerVars: {
           autoplay: 1,
           mute: 1,
           loop: 1,
-          playlist: "xxvAzOGf3gs",
+          playlist: "RVR4syciE7k",
           controls: 0,
           disablekb: 1,
           rel: 0,
@@ -411,7 +411,7 @@ export default function Home() {
         {/* Fallback iframe for browsers that don't support JS API - hidden by default */}
         <iframe
           className="absolute inset-0 w-full h-full pointer-events-none opacity-0 -z-10"
-          src="https://www.youtube.com/embed/xxvAzOGf3gs?si=wCLiDUfhNU4-uNsR&autoplay=1&mute=1&playsinline=1&loop=1&playlist=xxvAzOGf3gs&controls=0&disablekb=1&rel=0&showinfo=0&modestbranding=1&fs=0&iv_load_policy=3&cc_load_policy=0&enablejsapi=1"
+          src="https://www.youtube.com/embed/RVR4syciE7k?autoplay=1&mute=1&playsinline=1&loop=1&playlist=RVR4syciE7k&controls=0&disablekb=1&rel=0&showinfo=0&modestbranding=1&fs=0&iv_load_policy=3&cc_load_policy=0&enablejsapi=1"
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
           allowFullScreen
