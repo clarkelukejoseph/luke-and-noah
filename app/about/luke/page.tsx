@@ -77,7 +77,7 @@ export default function AboutLuke() {
                   LinkedIn
                 </Link> / 
                 <Link
-                  href="https://www.instagram.com/lukejosephclarke/"
+                  href="https://www.instagram.com/playmaker.luke/"
                   target="_blank"
                   className="font-light text-amber-200 hover:text-amber-400 transition-colors duration-70 ease-in-out"
                 >
