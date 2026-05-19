@@ -1664,7 +1664,8 @@ const workProjectsData: WorkProject[] = [
   {
     id: 48,
     image: ["/images/bigScruff/screenshot.png"],
-    gifLink: "/images/bigScruff/bigScruffWebsite.gif",
+    gifLink:
+      "https://drive.google.com/file/d/1n-sWvqPHeR7gHGVfF6Wb1YZzklmsjer5/view?usp=drive_link",
     title: "Big Scruff Visual Album",
     description:
       "Created from an eclectic blend of footage dating from over a decade before its release to November 2025, the Clarke brothers' first visual album adapts recording artist I.L.L.'s EP of the same name into an abstract look at grief and nostalgia.",

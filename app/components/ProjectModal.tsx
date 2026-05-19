@@ -11,6 +11,14 @@ interface ProjectModalProps {
   project: WorkProject | null;
 }
 
+function getGoogleDriveImageUrl(url: string) {
+  const fileMatch = url.match(/drive\.google\.com\/file\/d\/([^/]+)/);
+  const idMatch = url.match(/[?&]id=([^&]+)/);
+  const fileId = fileMatch?.[1] ?? idMatch?.[1];
+
+  return fileId ? `https://lh3.googleusercontent.com/d/${fileId}` : url;
+}
+
 export default function ProjectModal({
   isOpen,
   onClose,
@@ -20,9 +28,13 @@ export default function ProjectModal({
   const usesImageHeader =
     project?.gifLink?.toLowerCase().endsWith(".gif") ||
     project?.gifLink?.includes("drive.google.com");
+  const imageHeaderSrc =
+    project?.gifLink && usesImageHeader
+      ? getGoogleDriveImageUrl(project.gifLink)
+      : project?.gifLink;
 
   useEffect(() => {
-    if (!isOpen || !project?.gifLink) return;
+    if (!isOpen || !project?.gifLink || usesImageHeader) return;
     const video = videoRef.current;
     if (!video) return;
     // Ensure muted for Chromium autoplay policy
@@ -44,7 +56,7 @@ export default function ProjectModal({
     } else {
       tryPlay();
     }
-  }, [isOpen, project?.gifLink]);
+  }, [isOpen, project?.gifLink, usesImageHeader]);
   useEffect(() => {
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
@@ -164,7 +176,7 @@ export default function ProjectModal({
               {project.gifLink ? (
                 usesImageHeader ? (
                   <img
-                    src={project.gifLink}
+                    src={imageHeaderSrc}
                     alt={project.title}
                     className="w-full h-full object-cover rounded-t-lg"
                   />
