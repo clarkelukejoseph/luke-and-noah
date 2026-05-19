@@ -1855,7 +1855,16 @@ const workProjectsData: WorkProject[] = [
       { name: "Luke Clarke", role: ["Photographer"] },
       { name: "Noah Clarke", role: ["Photographer"] },
     ],
-    links: [],
+    links: [
+      {
+        name: "Youtube",
+        link: "https://www.youtube.com/watch?v=WMXnRmyQ0nQ&t=3s",
+      },
+      {
+        name: "Instagram Ad",
+        link: "https://www.instagram.com/p/DToKJsPj4k-/?img_index=3",
+      },
+    ],
     modalPhotos: [
       "https://lh3.googleusercontent.com/d/1ha2oxataNtsKx4MigBGEHEwfk91COC1z",
       "https://lh3.googleusercontent.com/d/1agigcQWqKWWu4LW5GUTzWst2TVVeAEMH",
