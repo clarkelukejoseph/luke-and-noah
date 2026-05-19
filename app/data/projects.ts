@@ -1930,6 +1930,35 @@ const workProjectsData: WorkProject[] = [
       },
     ],
   },
+  {
+    id: 58,
+    image: ["https://lh3.googleusercontent.com/d/1YisnVxv9KC60Fj3vTV7rpliFq2lEBjS-"],
+    gifLink: "https://lh3.googleusercontent.com/d/1YisnVxv9KC60Fj3vTV7rpliFq2lEBjS-",
+    title: "VIP Skylark, Laron - Floral (Official Music Video)",
+    description:
+      "This music video off of VIP Skylark and Laron's upcoming collaborative album contrasts the harsh human construction of Brooklyn with the serenity of nature via pristine 4k video footage and grainy VHS footage.",
+    genre: ["Rap", "Music Video"],
+    runtime: "2 minutes",
+    releaseYear: 2026,
+    comingSoon: true,
+    cast: [{ name: "VIP Skylark", character: "Himself" }],
+    crew: [
+      { name: "Sebastian Mann", role: ["Director", "Producer", "Editor", "Camera Operator"] },
+      { name: "Luke Clarke", role: ["Producer", "Camera Operator", "Colorist", "Additional Editing"] },
+      { name: "Noah Clarke", role: ["Producer", "Camera Operator", "Additional Editing"] },
+    ],
+    links: [],
+    groupings: [
+      {
+        name: "Luke",
+        group: ["Producing", "Editing", "Cinematography", "Music Video"],
+      },
+      {
+        name: "Noah",
+        group: ["Producing", "Editing", "Cinematography", "Music Video"],
+      },
+    ],
+  },
 ];
 
 // Explicit order reflecting the requested listing (by existing ids)
@@ -1965,6 +1994,7 @@ const ORDER_BY_ID: number[] = [
   34, // So Much
   19, // Gramps: The Movie - 10 Year Anniversary Commentary
   28, // The Rumor of Real Things | STITCH Runway | SS24
+  58, // VIP Skylark, Laron - Floral (Official Music Video)
   29, // Seminole Scoop Episodes 24-34
   15, // FSU Club Softball Feature
   30, // Toro Portuguese Photoshoot
