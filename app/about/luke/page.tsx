@@ -199,7 +199,7 @@ export default function AboutLuke() {
                 Notable Work
               </h3>
               <div className="flex flex-wrap gap-4 max-sm:flex-col max-sm:w-full">
-              {notableProjects.map((project, index) => (
+              {notableProjects.map((project) => (
                   <div key={project.id} className="max-sm:w-full">
                     <div className="relative w-40 h-60 max-sm:w-full max-sm:h-140 max-md:w-80 max-md:h-96 overflow-hidden rounded-sm cursor-pointer hover:opacity-90 transition-opacity duration-70">
                       <div onClick={() => handleProjectClick(project)}>
@@ -209,14 +209,6 @@ export default function AboutLuke() {
                           fill
                           className="object-cover"
                         />
-                        <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/85 via-black/45 to-transparent p-3 pt-12">
-                          <p className="text-xs text-amber-200 font-medium">
-                            {String(index + 1).padStart(2, "0")}
-                          </p>
-                          <p className="text-sm text-white font-medium leading-tight">
-                            {project.title}
-                          </p>
-                        </div>
                       </div>
                     </div>
                   </div>

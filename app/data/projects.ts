@@ -1669,6 +1669,7 @@ const workProjectsData: WorkProject[] = [
     title: "Big Scruff Visual Album",
     description:
       "Created from an eclectic blend of footage dating from over a decade before its release to November 2025, the Clarke brothers' first visual album adapts recording artist I.L.L.'s EP of the same name into an abstract look at grief and nostalgia.",
+    lukeWork: true,
     genre: ["Music", "Art-House", "Experimental"],
     runtime: "21 minutes",
     releaseYear: 2026,
