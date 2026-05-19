@@ -3,8 +3,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import Header from "../components/Header";
-import LukeSection from "./luke/page";
-import NoahSection from "./noah/page";
+import LukeSection from "./LukeSection";
+import NoahSection from "./NoahSection";
 import Footer from "../components/Footer";
 
 export default function AboutPage() {
