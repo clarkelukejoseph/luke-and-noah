@@ -53,17 +53,16 @@ export default function AboutPage() {
               >
                 Noah
               </button>{" "}
-              Clarke are Maryland-based filmmakers, videographers and artists.
-              Born, raised, and based in the DC area, the brothers also
-              frequently work in Baltimore, Pennsylvania, Florida, California
-              and the Tri State area. The two have been making videos for as
-              long as they can remember, with their love of the craft leading
-              them to a public access television station while only in middle
-              school. <br />
+              Clarke are New York-based filmmakers, videographers and artists.
+              Born, raised, and based in Maryland, the brothers also frequently
+              work in DC, Baltimore, Pennsylvania & Florida. The two have been
+              making videos for as long as they can remember, with their love
+              of the craft leading them to a public access television station
+              while only in middle school. <br />
               <br />
               Since then, the duo have built a portfolio including award winning
-              documentaries, short films, music videos, commercials and a
-              feature length movie. No matter the medium, their work skates the
+              documentaries, shorts, music videos, commercials and a feature
+              length film. No matter the medium, their work skates the
               line between absurd comedy, prescient commentary, stark imagery
               and quiet drama. Since graduating from Florida State University,
               Luke & Noah have continued to hone their skills as directors,
