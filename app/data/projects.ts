@@ -285,7 +285,7 @@ const workProjectsData: WorkProject[] = [
   },
   {
     id: 5,
-    image: ["/images/carryMyPain/screenshot.jpg"],
+    image: ["https://lh3.googleusercontent.com/d/1nTHBoWoQ9Bqp9zvSMiCLIawv7UM38KBX"],
     moviePoster: "/images/carryMyPain/posterVertical.jpg",
     gifLink: "/images/carryMyPain/whoIsIt.mp4",
     title: "Who Is It That Is Going To Carry My Pain? And For Whom?",
