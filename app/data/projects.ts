@@ -1745,13 +1745,13 @@ const workProjectsData: WorkProject[] = [
     gifLink: "https://lh3.googleusercontent.com/d/11C6zZHLgnNI48O0_DGnXM-GJBp95uCnZ",
     title: "Container Store Christmas Wrapping Video",
     description:
-      "A holiday-focused commercial video project for The Container Store, centered around Christmas wrapping and seasonal retail presentation.",
-    genre: ["Commercial", "Holiday", "Social Media"],
-    releaseYear: 2026,
+      "A how-to guide on gift wrapping made in collaboration with The Container Store's Rockville, Maryland location, this 2-minute video shows Luke and Noah's abilities as corporate filmmakers. The video would go on to be one of the final four winners of the \"2025 Christmas Wrap Battle\" winners in the company.",
+    genre: ["How to Video", "Advertisement"],
+    runtime: "2 minutes",
+    releaseYear: 2025,
     cast: [],
     crew: [
-      { name: "Luke Clarke", role: ["Producer", "Editor", "Cinematographer"] },
-      { name: "Noah Clarke", role: ["Producer", "Editor", "Cinematographer"] },
+      { name: "Luke & Noah Clarke", role: ["Cinematographer", "Editor", "Audio"] },
     ],
     links: [
       {
@@ -1767,11 +1767,11 @@ const workProjectsData: WorkProject[] = [
     groupings: [
       {
         name: "Luke",
-        group: ["Producing", "Editing", "Cinematography"],
+        group: ["Editing", "Cinematography"],
       },
       {
         name: "Noah",
-        group: ["Producing", "Editing", "Cinematography"],
+        group: ["Editing", "Cinematography"],
       },
     ],
   },
@@ -1781,14 +1781,11 @@ const workProjectsData: WorkProject[] = [
     gifLink: "https://lh3.googleusercontent.com/d/1Ud5ZNwKLEEHoiycjPoCPAkX0BAuV-PPA",
     title: "Saratoga Parking Garage Photoshoot",
     description:
-      "A parking garage photoshoot built around stark urban lines, direct flash texture, and nighttime fashion photography.",
+      "A photoshoot of the Saratoga Street Parking Garage located in Baltimore Maryland to help with the location's online promotional footprint.",
     genre: ["Photography"],
-    releaseYear: 2026,
+    releaseYear: 2025,
     cast: [],
-    crew: [
-      { name: "Luke Clarke", role: ["Photographer"] },
-      { name: "Noah Clarke", role: ["Photographer"] },
-    ],
+    crew: [],
     links: [
       {
         name: "Airgarage",
@@ -1813,15 +1810,15 @@ const workProjectsData: WorkProject[] = [
     id: 53,
     image: ["https://lh3.googleusercontent.com/d/14OQE-ZUAhwRvi6ZiNIwTt4iDSEaXDH4K"],
     gifLink: "https://lh3.googleusercontent.com/d/14OQE-ZUAhwRvi6ZiNIwTt4iDSEaXDH4K",
-    title: "454 DJ Set",
+    title: "Gatorface Full DJ Set NYC",
     description:
-      "Photography and video coverage of a full DJ set in New York City.",
-    genre: ["Music", "Photography", "Event Coverage"],
-    releaseYear: 2026,
+      "In his first collaboration with TappedTV, Luke Clarke assisted with the color correction on the filmed set for DJ Gatorface, more famously known under his rap moniker of 454.",
+    genre: ["Filmed DJ Set"],
+    runtime: "58 minutes",
+    releaseYear: 2025,
     cast: [],
     crew: [
-      { name: "Luke Clarke", role: ["Photographer", "Cinematographer"] },
-      { name: "Noah Clarke", role: ["Photographer", "Cinematographer"] },
+      { name: "Luke Clarke", role: ["Color Correction"] },
     ],
     links: [
       {
@@ -1833,8 +1830,7 @@ const workProjectsData: WorkProject[] = [
       "https://lh3.googleusercontent.com/d/1PfetsuWl2Px9z5-cM9kvv7uGULLpjuSE",
     ],
     groupings: [
-      { name: "Luke", group: ["Photography", "Cinematography", "Music"] },
-      { name: "Noah", group: ["Photography", "Cinematography", "Music"] },
+      { name: "Luke", group: ["Editing", "Music"] },
     ],
   },
   {
@@ -1843,8 +1839,9 @@ const workProjectsData: WorkProject[] = [
     gifLink: "https://lh3.googleusercontent.com/d/1Tkp8HIyr4jSPom5C-GFDd-m0zb6WJqa5",
     title: "Summer's Over Posh Lab",
     description:
-      "A music and visual project for Posh Lab's Summer's Over, pairing a warm late-season mix with image-based presentation.",
-    genre: ["Music", "Photography"],
+      "To kick off 2026, Luke & Noah created their first official DJ Mix in over 4 years in collaboration with Rory Donohue's Posh Lab website. Titled \"Summer's Over\", this 59 minute collection of archival music from the past 60 years paints a vivid journey through the mix's eponymous season. By seamlesslessly weaving music from a variety of culture's, genre's and moods, Luke and Noah demonstrate their continued devotion to eclecticism.",
+    genre: ["Folk", "Dub", "Latin", "Singer-Songwriter", "Electronic"],
+    runtime: "59 minutes",
     releaseYear: 2026,
     cast: [],
     crew: [
@@ -1873,13 +1870,25 @@ const workProjectsData: WorkProject[] = [
     gifLink: "https://lh3.googleusercontent.com/d/1rl2rhly3kcQvfTiqokST-unDuu1e4p3r",
     title: "Bone on the Nose",
     description:
-      "A stylized photo project centered on close-up portraiture, texture, and playful visual abstraction.",
-    genre: ["Photography"],
+      "The first official short film from the Side World Video collective, this experimental horror comedy short follows a dog named Sparky in his journey towards freedom. Made in collaboration with regular collaborators Lilith Videt Weeks, Isaac Lucy, Arianna Ganley, Patrick Flanagan, & Julia Cooke, Luke and Noah provided camera work, audio, acting, equipment expertise, and anything else required on this rambunctious set.",
+    genre: ["Abstract Comedy", "Short Film", "Horror"],
+    runtime: "8 minutes",
     releaseYear: 2026,
-    cast: [],
+    cast: [
+      { name: "Patrick Flanagan", character: "Sparky" },
+      { name: "Julia Cooke", character: "Julia" },
+      { name: "Noah Clarke", character: "Noah" },
+      { name: "Lilith Videt Weeks", character: "Eye Witness" },
+    ],
     crew: [
-      { name: "Luke Clarke", role: ["Photographer"] },
-      { name: "Noah Clarke", role: ["Photographer"] },
+      { name: "Lilith Videt Weeks", role: ["Created by"] },
+      { name: "Julia Cooke", role: ["Created by"] },
+      { name: "Isaac Lucy", role: ["Created by", "Music"] },
+      { name: "Luke Clarke", role: ["Additional Help"] },
+      { name: "Noah Clarke", role: ["Additional Help"] },
+      { name: "Arianna Ganley", role: ["Additional Help"] },
+      { name: "Patrick Flanagan", role: ["Additional Help"] },
+      { name: "Null", role: ["Music"] },
     ],
     links: [
       {
@@ -1897,8 +1906,8 @@ const workProjectsData: WorkProject[] = [
       "https://lh3.googleusercontent.com/d/1jlX4fTYWrB21lITuklQ0dcJU67pOlugd",
     ],
     groupings: [
-      { name: "Luke", group: ["Photography"] },
-      { name: "Noah", group: ["Photography"] },
+      { name: "Luke", group: ["Cinematography", "Acting"] },
+      { name: "Noah", group: ["Cinematography", "Acting"] },
     ],
   },
   {
@@ -1907,13 +1916,14 @@ const workProjectsData: WorkProject[] = [
     gifLink: "https://lh3.googleusercontent.com/d/1SrU_18HAf0TH27Yf93ZxeftHB4YTlgjt",
     title: "Toppled Toybox",
     description:
-      "A colorful video and image project with a toybox-like visual palette and playful, collage-driven energy.",
-    genre: ["Video", "Music", "Experimental"],
-    releaseYear: 2026,
-    cast: [],
+      "Luke Clarke acts as the narrator to the newly started \"Toppled Toybox\" web series created by animator and VFX artist Finley Stein. Each episode finds Luke describing a unique historical anecdote from the annals of world history, from the history of nudity in film to men getting stuck atop mountains. The concept of episode 1 was provided by Luke, with subsequent episodes being derived from Finley's deep reservoir of fun, historical stories. The series has been met with success, garnering hundreds of thousands of views.",
+    genre: ["Animation", "Educational", "Vertical", "Social Media"],
+    runtime: "30 seconds each",
+    releaseYear: 2024,
+    cast: [{ name: "Luke Clarke", character: "Narrator" }],
     crew: [
-      { name: "Luke Clarke", role: ["Director", "Editor", "Cinematographer"] },
-      { name: "Noah Clarke", role: ["Director", "Editor", "Cinematographer"] },
+      { name: "Finley Stein", role: ["Writer", "Animator", "Editor"] },
+      { name: "Jalen Rayno", role: ["Additional Voice Work"] },
     ],
     links: [
       { name: "Episode 1", link: "https://www.instagram.com/p/DWM2KpzD9ox/" },
@@ -1926,11 +1936,7 @@ const workProjectsData: WorkProject[] = [
     groupings: [
       {
         name: "Luke",
-        group: ["Directing", "Editing", "Cinematography", "Music Video"],
-      },
-      {
-        name: "Noah",
-        group: ["Directing", "Editing", "Cinematography", "Music Video"],
+        group: ["Acting", "Writing"],
       },
     ],
   },
@@ -1940,16 +1946,20 @@ const workProjectsData: WorkProject[] = [
     gifLink: "https://lh3.googleusercontent.com/d/1yZ056UioIuUbiXRX9uRoIrMCkJQwUFQS",
     title: "batsoma - Cutter (Official Music Video)",
     description:
-      "Shot using five separate cameras, this music video for batsoma's song Cutter is a visually diverse interpretation of the underground Richmond rap scene that batsoma is a part of.",
-    genre: ["Rap", "Music Video"],
-    runtime: "2 minutes",
+      "Shot using 5 separate cameras, this music video for batsoma's song Cutter is a visually diverse interpretation of the underground Richmond rap scene that batsoma is a part of.",
+    genre: ["Cloud Rap", "Trap", "Music Video"],
+    runtime: "3 minutes",
     releaseYear: 2026,
     comingSoon: true,
     cast: [{ name: "batsoma", character: "as herself" }],
     crew: [
-      { name: "Luke Clarke", role: ["Producer", "Editor", "Cinematographer", "Colorist"] },
-      { name: "Noah Clarke", role: ["Producer", "Editor", "Cinematographer"] },
-      { name: "Sebastian Mann", role: ["Director", "Producer", "Editor", "Camera Operator"] },
+      { name: "Sebastian Mann", role: ["Producer", "Editor", "Camera Operator"] },
+      { name: "Luke Clarke", role: ["Producer", "Camera Operator"] },
+      { name: "Noah Clarke", role: ["Producer", "Camera Operator"] },
+      { name: "Julia Cooke", role: ["Camera Operator"] },
+      { name: "Mari Morgan", role: ["Camera Operator"] },
+      { name: "Kayla Shomar-Corbett", role: ["Production Assistant"] },
+      { name: "Samuel Ingram", role: ["Production Assistant"] },
     ],
     links: [],
     modalPhotos: [
@@ -1981,7 +1991,7 @@ const workProjectsData: WorkProject[] = [
     comingSoon: true,
     cast: [{ name: "VIP Skylark", character: "Himself" }],
     crew: [
-      { name: "Sebastian Mann", role: ["Director", "Producer", "Editor", "Camera Operator"] },
+      { name: "Sebastian Mann", role: ["Director", "Producer", "Camera Operator"] },
       { name: "Luke Clarke", role: ["Producer", "Camera Operator", "Colorist", "Additional Editing"] },
       { name: "Noah Clarke", role: ["Producer", "Camera Operator", "Additional Editing"] },
     ],
@@ -2003,15 +2013,22 @@ const workProjectsData: WorkProject[] = [
     gifLink: "https://lh3.googleusercontent.com/d/1_ZSsmXmO0jURjsoCEUEQX82hLENHxb11",
     title: "Pompeii//Utility NYC Recap",
     description:
-      "A recap video documenting Pompeii and Utility's New York City event, built around energetic event coverage and social-first editing.",
-    genre: ["Event Recap", "Video", "Social Media"],
+      "Using Luke & Noah's equipment after being trained by them, Sebastian Mann recorded the album release concert for Earl Sweatshirt & Mike's collaborative 2026 album \"Pompeii / / Utility\".",
+    genre: ["Concert Recap", "Vlog"],
+    runtime: "1 minute",
     releaseYear: 2026,
     cast: [],
     crew: [
-      { name: "Luke Clarke", role: ["Editor", "Cinematographer"] },
-      { name: "Noah Clarke", role: ["Editor", "Cinematographer"] },
+      { name: "Sebastian Mann", role: ["Director", "Editor", "Camera Operator"] },
+      { name: "Luke Clarke", role: ["Producer"] },
+      { name: "Noah Clarke", role: ["Producer"] },
     ],
-    links: [],
+    links: [
+      {
+        name: "Instagram",
+        link: "https://www.instagram.com/p/DXRz-wztZB_/",
+      },
+    ],
     groupings: [
       {
         name: "Luke",
