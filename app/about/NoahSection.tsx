@@ -21,15 +21,12 @@ export default function AboutNoah() {
   };
 
   const notableWorkOrder = [
+    "Chet Larson",
+    "Who Is It That Is Going To Carry My Pain? And For Whom?",
     "Convenience",
     "The Energy Solution - The End of 2010 (Official Music Video)",
-    "The Energy Solution - Talk to Me (Official Music Video)",
-    "Chet Larson",
-    "Chet Larson Coda",
-    "Hairless Dog or The Mirror March",
     "Artifice CD Art Direction",
-    "The Small Victorian Boy",
-    "Who Is It That Is Going To Carry My Pain? And For Whom?",
+    "Hairless Dog or The Mirror March",
   ];
 
   const notableProjects = notableWorkOrder
