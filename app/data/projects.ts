@@ -493,7 +493,7 @@ const workProjectsData: WorkProject[] = [
   },
   {
     id: 47,
-    image: ["/images/yellOccult/toadHorizontal.png"],
+    image: ["https://lh3.googleusercontent.com/d/1dHGra1zqx5v09jWIu2LCZyVM_cN1wAnG"],
     title: "Yell Occult - Mr. Toad's Wild Ride (Music Video)",
     gifLink: "/images/yellOccult/toadGif.mp4",
     description:
