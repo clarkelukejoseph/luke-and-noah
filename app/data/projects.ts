@@ -1997,6 +1997,32 @@ const workProjectsData: WorkProject[] = [
       },
     ],
   },
+  {
+    id: 59,
+    image: ["https://lh3.googleusercontent.com/d/1_ZSsmXmO0jURjsoCEUEQX82hLENHxb11"],
+    gifLink: "https://lh3.googleusercontent.com/d/1_ZSsmXmO0jURjsoCEUEQX82hLENHxb11",
+    title: "Pompeii//Utility NYC Recap",
+    description:
+      "A recap video documenting Pompeii and Utility's New York City event, built around energetic event coverage and social-first editing.",
+    genre: ["Event Recap", "Video", "Social Media"],
+    releaseYear: 2026,
+    cast: [],
+    crew: [
+      { name: "Luke Clarke", role: ["Editor", "Cinematographer"] },
+      { name: "Noah Clarke", role: ["Editor", "Cinematographer"] },
+    ],
+    links: [],
+    groupings: [
+      {
+        name: "Luke",
+        group: ["Editing", "Cinematography"],
+      },
+      {
+        name: "Noah",
+        group: ["Editing", "Cinematography"],
+      },
+    ],
+  },
 ];
 
 // Explicit order reflecting the requested listing (by existing ids)
@@ -2027,6 +2053,7 @@ const ORDER_BY_ID: number[] = [
   34, // So Much
   19, // Gramps: The Movie - 10 Year Anniversary Commentary
   56, // Toppled Toybox
+  59, // Pompeii//Utility NYC Recap
   28, // The Rumor of Real Things | STITCH Runway | SS24
   29, // Seminole Scoop Episodes 24-34
   52, // Saratoga Parking Garage Photoshoot
